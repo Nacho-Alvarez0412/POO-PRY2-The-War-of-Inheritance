@@ -14,9 +14,11 @@ import java.util.ArrayList;
 public abstract class Warrior extends Element {
     //Atributos
     Warriors type;
+    int occupancy;
     
-    Warrior(String name,Warriors type, ArrayList appereance, int health, int attack, int attackSpeed, int lvl, int occupancy, int unlockLvl, int x, int y, int range){
-        super(appereance,health,attack,attackSpeed,lvl,occupancy,unlockLvl,x,y,range,name);
+    Warrior(String name,Warriors type, ArrayList appereance, int health, int attack, int attackSpeed, int lvl, int occupancy, int unlockLvl, int x, int y, int range,ElementType Etype){
+        super(appereance,health,attack,attackSpeed,lvl,unlockLvl,x,y,range,name,Etype);
         this.type = type;
+        this.occupancy = occupancy;
     }
 }

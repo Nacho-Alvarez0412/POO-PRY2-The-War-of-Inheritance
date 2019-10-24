@@ -17,7 +17,7 @@ public class DataBase implements Serializable {
     ArrayList<int[][]> lvls;
     ArrayList<User> users;
     
-    DataBase(){
+    public DataBase(){
         DataBase dataBase = (DataBase) FileManager.readObject("DataBase.txt");
         if (dataBase != null){
             this.lvls = dataBase.lvls;
@@ -25,14 +25,13 @@ public class DataBase implements Serializable {
         }
         
         else{
-            System.out.println("Entre");
             this.lvls = new ArrayList<int[][]>();
             this.users = new ArrayList<User>();
         }
         
     }
     
-    boolean authenticate(String username,String password){
+    public boolean authenticate(String username,String password){
         
         for(int i = 0 ; i < users.size() ; i++){
             if(users.get(i).username.equals(username)){
@@ -44,7 +43,7 @@ public class DataBase implements Serializable {
         return false;
     }
     
-    boolean isValid(String name){
+    public boolean isValid(String name){
         for(int i = 0 ; i < users.size() ; i++){
             if(users.get(i).username.equals(name))
                 return false;
@@ -52,7 +51,7 @@ public class DataBase implements Serializable {
         return true;
     }
     
-    boolean createUser(String name,String password){
+    public boolean createUser(String name,String password){
         User user = new User(name,password);
         
         if(isValid(name)){
@@ -62,13 +61,21 @@ public class DataBase implements Serializable {
         return false;
     }
     
-    void closeDataBase(){
+    public void closeDataBase(){
         FileManager.writeObject(this, "DataBase.txt");
     }
     
     @Override
     public String  toString(){
         return users.toString();
+    }
+    
+    public User getUser(String name){
+        for(int i = 0 ; i < users.size() ; i++){
+            if(users.get(i).username.equals(name))
+                return users.get(i);
+        }
+        return null;
     }
     
 }

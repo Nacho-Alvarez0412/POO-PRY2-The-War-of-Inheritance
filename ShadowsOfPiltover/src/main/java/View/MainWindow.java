@@ -91,7 +91,7 @@ public class MainWindow extends javax.swing.JFrame {
         jButton1.setBounds(230, 500, 540, 110);
 
         PasswordTextField.setBackground(new java.awt.Color(0, 122, 126));
-        PasswordTextField.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
+        PasswordTextField.setFont(new java.awt.Font("Viner Hand ITC", 0, 18)); // NOI18N
         PasswordTextField.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 3, true));
         PasswordTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -102,7 +102,7 @@ public class MainWindow extends javax.swing.JFrame {
         PasswordTextField.setBounds(450, 430, 230, 40);
 
         UsernameTextField.setBackground(new java.awt.Color(0, 122, 126));
-        UsernameTextField.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
+        UsernameTextField.setFont(new java.awt.Font("Viner Hand ITC", 0, 18)); // NOI18N
         UsernameTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         UsernameTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -233,13 +233,13 @@ public class MainWindow extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Background;
     private javax.swing.JLabel EnterTheSeaLabel;
-    private javax.swing.JButton NewUserButton;
+    public javax.swing.JButton NewUserButton;
     private javax.swing.JLabel PasswordLabel;
-    private javax.swing.JPasswordField PasswordTextField;
+    public javax.swing.JPasswordField PasswordTextField;
     private javax.swing.JLabel TitleLabel;
     private javax.swing.JLabel UsernameLable;
-    private javax.swing.JTextField UsernameTextField;
-    private javax.swing.JButton jButton1;
+    public javax.swing.JTextField UsernameTextField;
+    public javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

@@ -15,8 +15,8 @@ public abstract class Deffense extends Element {
     Warriors objective;
     Deffenses type;
     
-    Deffense(String name,Deffenses type, ArrayList appereance, int health, int attack, int attackSpeed, int lvl, int occupancy, int unlockLvl, int x, int y, int range){
-        super(appereance,health,attack,attackSpeed,lvl,occupancy,unlockLvl,x,y,range,name);
+    Deffense(String name,Deffenses type, ArrayList appereance, int health, int attack, int attackSpeed, int lvl, int unlockLvl, int x, int y, int range,ElementType Etype){
+        super(appereance,health,attack,attackSpeed,lvl,unlockLvl,x,y,range,name,Etype);
         this.type = type;
     }
 }

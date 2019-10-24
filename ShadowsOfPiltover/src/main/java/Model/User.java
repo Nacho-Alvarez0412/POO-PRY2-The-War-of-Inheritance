@@ -25,6 +25,30 @@ public class User implements Serializable {
         this.password = password;
         this.currentLvl = 1;
     }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public int getCurrentLvl() {
+        return currentLvl;
+    }
+
+    public void setCurrentLvl(int currentLvl) {
+        this.currentLvl = currentLvl;
+    }
     
     
 }
