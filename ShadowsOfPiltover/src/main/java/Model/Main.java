@@ -41,9 +41,11 @@ public class Main {
         
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                MainWindow window = new MainWindow();
+                //MainWindow window = new MainWindow();
                 DataBase dataBase = new DataBase();
-                DataBaseController DeadTides = new DataBaseController(window,dataBase);                
+                //DataBaseController DeadTides = new DataBaseController(window,dataBase);
+                
+                dataBase.printLvl(9);
             }
         });
     }

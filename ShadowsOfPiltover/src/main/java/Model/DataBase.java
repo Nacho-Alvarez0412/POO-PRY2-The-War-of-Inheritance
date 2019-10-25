@@ -14,7 +14,7 @@ import java.util.ArrayList;
  */
 public class DataBase implements Serializable {
     //Atributos
-    ArrayList<int[][]> lvls;
+    ArrayList<ElementType[][]> lvls;
     ArrayList<User> users;
     
     public DataBase(){
@@ -25,8 +25,9 @@ public class DataBase implements Serializable {
         }
         
         else{
-            this.lvls = new ArrayList<int[][]>();
-            this.users = new ArrayList<User>();
+            this.lvls = new ArrayList<>();
+            this.users = new ArrayList<>();
+            loadLvls();
         }
         
     }
@@ -76,6 +77,41 @@ public class DataBase implements Serializable {
                 return users.get(i);
         }
         return null;
+    }
+        
+    private void loadLvls(){
+        ArrayList<ElementType[][]> levels = (ArrayList<ElementType[][]>) FileManager.readObject("Levels.txt");
+        
+        if(levels != null){
+            this.lvls = levels;
+        }
+        
+        else{
+            LevelGenerator lg = new LevelGenerator();
+            lg.lvl1();
+            lg.lvl2();
+            lg.lvl3();
+            lg.lvl4();
+            lg.lvl5();
+            lg.lvl6();
+            lg.lvl7();
+            lg.lvl8();
+            lg.lvl9();
+            lg.lvl10();
+            lvls = lg.getLvls();
+        }
+    }
+    
+    public void printLvl(int index){
+        ElementType[][] lvl = lvls.get(index);
+        
+        for(ElementType[] fila : lvl){
+            for(ElementType columna : fila ){
+                System.out.print(columna.ordinal());
+                System.out.print(",");
+            }
+            System.out.println("\n");
+        }
     }
     
 }
