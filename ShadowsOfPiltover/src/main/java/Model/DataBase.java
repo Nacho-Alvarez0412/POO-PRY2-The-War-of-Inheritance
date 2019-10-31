@@ -5,6 +5,7 @@
  */
 package Model;
 
+import Model.Enums.PieceTypes;
 import java.io.Serializable;
 import java.util.ArrayList;
 
@@ -14,19 +15,19 @@ import java.util.ArrayList;
  */
 public class DataBase implements Serializable {
     //Atributos
-    ArrayList<ElementType[][]> lvls;
     ArrayList<User> users;
+    ArrayList<int[][]> templates;
     
     public DataBase(){
         DataBase dataBase = (DataBase) FileManager.readObject("DataBase.txt");
         if (dataBase != null){
-            this.lvls = dataBase.lvls;
             this.users = dataBase.users;
+            this.templates = dataBase.templates;
         }
         
         else{
-            this.lvls = new ArrayList<>();
             this.users = new ArrayList<>();
+            this.templates = new ArrayList<>();
             loadLvls();
         }
         
@@ -35,11 +36,8 @@ public class DataBase implements Serializable {
     public boolean authenticate(String username,String password){
         
         for(int i = 0 ; i < users.size() ; i++){
-            if(users.get(i).username.equals(username)){
-                if(users.get(i).password.equals(password))
-                    return true;
-                return false;
-            }
+            if(users.get(i).username.equals(username) && users.get(i).password.equals(password))
+                return true;
         }
         return false;
     }
@@ -66,11 +64,6 @@ public class DataBase implements Serializable {
         FileManager.writeObject(this, "DataBase.txt");
     }
     
-    @Override
-    public String  toString(){
-        return users.toString();
-    }
-    
     public User getUser(String name){
         for(int i = 0 ; i < users.size() ; i++){
             if(users.get(i).username.equals(name))
@@ -78,39 +71,21 @@ public class DataBase implements Serializable {
         }
         return null;
     }
-        
+    
     private void loadLvls(){
-        ArrayList<ElementType[][]> levels = (ArrayList<ElementType[][]>) FileManager.readObject("Levels.txt");
-        
-        if(levels != null){
-            this.lvls = levels;
-        }
-        
-        else{
-            LevelGenerator lg = new LevelGenerator();
-            lg.lvl1();
-            lg.lvl2();
-            lg.lvl3();
-            lg.lvl4();
-            lg.lvl5();
-            lg.lvl6();
-            lg.lvl7();
-            lg.lvl8();
-            lg.lvl9();
-            lg.lvl10();
-            lvls = lg.getLvls();
-        }
+        TemplateGenerator tg = new TemplateGenerator();
+        templates = tg.getTemplates();
     }
     
     public void printLvl(int index){
-        ElementType[][] lvl = lvls.get(index);
+        int[][] lvl = templates.get(index);
         
-        for(ElementType[] fila : lvl){
-            for(ElementType columna : fila ){
-                System.out.print(columna.ordinal());
+        for(int[] i : lvl){
+            for(int j : i){
+                System.out.print(j);
                 System.out.print(",");
             }
-            System.out.println("\n");
+            System.out.println("");
         }
     }
     

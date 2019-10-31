@@ -3,13 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Model;
+package Model.Enums;
 
 /**
  *
  * @author nacho
  */
 public enum ElementType {
-    free,deffense,wall,delimitation,warrior
-        
+    deffense,warrior
 }

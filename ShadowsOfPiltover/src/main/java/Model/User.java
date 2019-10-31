@@ -6,6 +6,7 @@
 package Model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 /**
  *
@@ -16,6 +17,7 @@ public class User implements Serializable {
     String username;
     String password;
     int currentLvl;
+    ArrayList<Warrior> army;
     
     
     //Constructor
@@ -24,6 +26,15 @@ public class User implements Serializable {
         this.username = username;
         this.password = password;
         this.currentLvl = 1;
+        this.army = new ArrayList<>();
+    }
+
+    public ArrayList<Warrior> getArmy() {
+        return army;
+    }
+
+    public void setArmy(ArrayList<Warrior> army) {
+        this.army = army;
     }
 
     public String getUsername() {

@@ -6,6 +6,9 @@
 package Model;
 
 import Controller.DataBaseController;
+import Model.Warriors.Archer;
+import Model.Warriors.Dragon;
+import Model.Warriors.Skeleton;
 import View.MainWindow;
 
 /**
@@ -41,11 +44,33 @@ public class Main {
         
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                //MainWindow window = new MainWindow();
+                MainWindow main = new MainWindow();
                 DataBase dataBase = new DataBase();
-                //DataBaseController DeadTides = new DataBaseController(window,dataBase);
-                
-                dataBase.printLvl(9);
+//                User user = new User("Nacho","1234");
+//                user.currentLvl = 5;
+//                Game game = new Game(user,dataBase);
+//                game.warzone[2][2] = new Skeleton(5,game.warzone);
+//                game.warzone[4][10] = new Dragon(5,game.warzone);
+//                game.warzone[1][1] = new Archer(5,game.warzone);
+//                game.warzone[3][5] = new Archer(5,game.warzone);
+//                game.warzone[6][4] = new Dragon(5,game.warzone);
+//                
+//                
+//                
+//                
+//                game.printWarzone();
+//                
+//                
+//                game.warzone[1][1].deploy(1,1);
+//                game.warzone[2][2].deploy(2,2);
+//                game.warzone[4][10].deploy(4,10);
+//                game.warzone[3][5].deploy(3,5);
+//                game.warzone[6][4].deploy(6,4);
+//                game.activateDeffenses();
+
+                DataBaseController db = new DataBaseController(main,dataBase);
+                db._init_();
+                                
             }
         });
     }

@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Model;
+package Model.Enums;
 
 /**
  *
  * @author nacho
  */
-public enum Deffenses {
-    cannon,tower,wall,bomb,firecracker,mortar
+public enum WarriorType {
+    Meele,Ranged,Airborne,Beast,Hero
 }
