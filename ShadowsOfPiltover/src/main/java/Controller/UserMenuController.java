@@ -44,7 +44,7 @@ public class UserMenuController
             evento = !evento;
             return;
         }
-        if (e.getSource().equals(vista.ContinueJourneyButton)){
+        else if (e.getSource().equals(vista.ContinueJourneyButton)){
             evento = true;
             if(modelo.getCurrentLvl() != 1)
                 JOptionPane.showMessageDialog(vista, "Loading your epic adventures!");
@@ -54,7 +54,8 @@ public class UserMenuController
         }
         else if (e.getSource().equals(vista.NewJourneyButton)){
             evento = true;
-            JOptionPane.showMessageDialog(vista, "Preparing boat for sailing!");
+            SelectArmyController controller = new SelectArmyController(modelo);
+            controller._init_();
 
         }
     } 

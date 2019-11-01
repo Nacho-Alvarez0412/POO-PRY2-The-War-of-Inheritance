@@ -21,14 +21,16 @@ import javax.swing.SpringLayout;
 public abstract class Warrior extends Piece {
     public WarriorType type;
     public int armySlots;
+    public int cost;
     public ArrayList<DeffenseType> objective;
     public Deffense deffender;
 
-    public Warrior(String name, int health, int damage, int damageXsecond, int range, int lvl, int unlockLvl, int x, int y, ArrayList<Icon> appereance, ArrayList<File> sounds, JLabel frame, Piece[][] warzone,WarriorType type, int space) {
+    public Warrior(int cost,String name, int health, int damage, int damageXsecond, int range, int lvl, int unlockLvl, int x, int y, ArrayList<Icon> appereance, ArrayList<File> sounds, JLabel frame, Piece[][] warzone,WarriorType type, int space) {
         super(ElementType.warrior, name, health, damage, damageXsecond, range, lvl, unlockLvl, x, y, appereance, sounds, frame, warzone);
         this.type = type;
         this.objective = new ArrayList<>();
         this.armySlots = space;
+        this.cost = cost;
         this.objective.add(DeffenseType.Tower);
         this.objective.add(DeffenseType.Cannon);
         this.objective.add(DeffenseType.Firecracker);
@@ -67,6 +69,10 @@ public abstract class Warrior extends Piece {
         if(deffender == null)
             deffender = lastResort;
         
+    }
+
+    public int getCost() {
+        return cost;
     }
     
 }

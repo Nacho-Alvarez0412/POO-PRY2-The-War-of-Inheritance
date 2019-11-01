@@ -25,6 +25,7 @@ public class Game extends Thread {
         this.lvl = user.getCurrentLvl();
         this.dataBase = dataBase;
         warzone = BoardGenerator.generateBoard(dataBase.templates.get(lvl-1), lvl);
+        gold = 5+(2*(lvl-1));
     }
     
     public void printWarzone(){
@@ -48,5 +49,5 @@ public class Game extends Thread {
             }
         }
     }
-    
+        
 }

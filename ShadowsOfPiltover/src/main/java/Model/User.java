@@ -17,6 +17,8 @@ public class User implements Serializable {
     String username;
     String password;
     int currentLvl;
+    int gold;
+    int campSize;
     ArrayList<Warrior> army;
     
     
@@ -27,6 +29,24 @@ public class User implements Serializable {
         this.password = password;
         this.currentLvl = 1;
         this.army = new ArrayList<>();
+        this.gold = 800;
+        this.campSize = 4;
+    }
+
+    public int getGold() {
+        return gold;
+    }
+
+    public void setGold(int gold) {
+        this.gold = gold;
+    }
+
+    public int getCampSize() {
+        return campSize;
+    }
+
+    public void setCampSize(int campSize) {
+        this.campSize = campSize;
     }
 
     public ArrayList<Warrior> getArmy() {
@@ -59,6 +79,17 @@ public class User implements Serializable {
 
     public void setCurrentLvl(int currentLvl) {
         this.currentLvl = currentLvl;
+    }
+    
+    public void levelUp(int gold){
+        this.currentLvl++;
+        this.army.clear();
+        this.campSize = campSize + 2;
+        this.gold+= gold;
+    }
+    
+    public void addWarrior(Warrior warrior){
+        this.army.add(warrior);
     }
     
     

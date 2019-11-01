@@ -49,11 +49,11 @@ public class Main {
 //                User user = new User("Nacho","1234");
 //                user.currentLvl = 5;
 //                Game game = new Game(user,dataBase);
-//                game.warzone[2][2] = new Skeleton(5,game.warzone);
-//                game.warzone[4][10] = new Dragon(5,game.warzone);
-//                game.warzone[1][1] = new Archer(5,game.warzone);
-//                game.warzone[3][5] = new Archer(5,game.warzone);
-//                game.warzone[6][4] = new Dragon(5,game.warzone);
+//                game.warzone[2][2] = new Skeleton(5);
+//                game.warzone[4][10] = new Dragon(5);
+//                game.warzone[1][1] = new Archer(5);
+//                game.warzone[3][5] = new Archer(5);
+//                game.warzone[6][4] = new Dragon(5);
 //                
 //                
 //                

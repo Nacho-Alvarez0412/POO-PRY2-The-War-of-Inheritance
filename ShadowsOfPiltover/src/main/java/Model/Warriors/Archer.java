@@ -19,8 +19,8 @@ import java.util.logging.Logger;
  * @author nacho
  */
 public class Archer extends Warrior {
-    public Archer(int lvl,Piece[][] warzone){
-        super("Archer",1,1,1, 3, lvl, 1, 0, 0, new ArrayList<>(), new ArrayList<>(), null, warzone,WarriorType.Ranged,1);
+    public Archer(int lvl){
+        super(200,"Archer",1,1,1, 3, lvl, 1, 0, 0, new ArrayList<>(), new ArrayList<>(), null, null,WarriorType.Ranged,1);
         this.setHealth(80+(lvl*0.5));
         this.setDamage(10+(lvl*4));
         this.setDamageXsecond(3);

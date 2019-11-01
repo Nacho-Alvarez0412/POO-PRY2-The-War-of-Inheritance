@@ -18,11 +18,13 @@ import javax.swing.JOptionPane;
 public class DataBaseController implements ActionListener{
     private MainWindow view;
     private DataBase model;
+    private boolean evento;
 
     public DataBaseController(MainWindow vista, DataBase model) {
         this.view = vista;
         this.model = model;
         _init_();
+        evento = false;
     }
     
     public void _init_(){
@@ -36,7 +38,13 @@ public class DataBaseController implements ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource().equals(view.NewUserButton)){
+        
+        if(evento){
+            evento = !evento;
+            return;
+        }
+        
+        else if (e.getSource().equals(view.NewUserButton)){
             boolean created = model.createUser(view.UsernameTextField.getText(), view.PasswordTextField.getText());
             if(created){
                 JOptionPane.showMessageDialog(view, "User created Succesfully");
