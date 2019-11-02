@@ -11,6 +11,7 @@ import Model.Enums.WarriorType;
 import java.io.File;
 import java.util.ArrayList;
 import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
 /**
@@ -22,7 +23,7 @@ public abstract class Deffense extends Piece {
     public ArrayList<WarriorType> objective;
     public Warrior attacker;
 
-    public Deffense(String name, int health, int damage, int damageXsecond, int range, int lvl, int unlockLvl, int x, int y, ArrayList<Icon> appereance, ArrayList<File> sounds, JLabel frame, Piece[][] warzone,ArrayList<WarriorType> objective, DeffenseType type) {
+    public Deffense(String name, int health, int damage, int damageXsecond, int range, int lvl, int unlockLvl, int x, int y, ArrayList<ImageIcon> appereance, ArrayList<File> sounds, JLabel frame, Piece[][] warzone,ArrayList<WarriorType> objective, DeffenseType type) {
         super(ElementType.deffense, name, health, damage, damageXsecond, range, lvl, unlockLvl, x, y, appereance, sounds, frame, warzone);
         this.objective = objective;
         this.type = type;
@@ -30,7 +31,8 @@ public abstract class Deffense extends Piece {
     
     
     @Override
-    public void deploy(int x, int y){
+    public void deploy(int x, int y,Piece[][] warzone){
+        this.setWarzone(warzone);
         this.setX(x);
         this.setY(y);
         this.start();

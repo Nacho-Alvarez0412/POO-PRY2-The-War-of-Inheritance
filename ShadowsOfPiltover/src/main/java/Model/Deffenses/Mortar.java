@@ -13,6 +13,7 @@ import Model.Piece;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
 /**
@@ -26,7 +27,13 @@ public class Mortar extends Deffense {
         this.setDamage(40+(lvl*2));
         this.setHealth(80+(lvl*2.5));
         this.setDamageXsecond(4);
-        this.setFrame(null); // Cambiar!!!!!!
+        
+        ArrayList<ImageIcon> appereance = new ArrayList();
+        appereance.add(new ImageIcon("C:\\Users\\nacho\\Desktop\\Proyectos\\Java\\The-War-of-Inheritance\\ShadowsOfPiltover\\src\\main\\java\\View\\DeffenseAssets\\Mortar.png"));
+        setAppereance(appereance);
+        this.setFrame(new JLabel()); 
+        this.getFrame().setIcon(appereance.get(0));
+        
         this.setUnlockLvl(6);
         this.objective.add(WarriorType.Hero);
         this.objective.add(WarriorType.Ranged);

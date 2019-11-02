@@ -10,9 +10,8 @@ import Model.Enums.ElementType;
 import Model.Enums.WarriorType;
 import java.io.File;
 import java.util.ArrayList;
-import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import javax.swing.JLabel;
-import javax.swing.SpringLayout;
 
 /**
  *
@@ -25,7 +24,7 @@ public abstract class Warrior extends Piece {
     public ArrayList<DeffenseType> objective;
     public Deffense deffender;
 
-    public Warrior(int cost,String name, int health, int damage, int damageXsecond, int range, int lvl, int unlockLvl, int x, int y, ArrayList<Icon> appereance, ArrayList<File> sounds, JLabel frame, Piece[][] warzone,WarriorType type, int space) {
+    public Warrior(int cost,String name, int health, int damage, int damageXsecond, int range, int lvl, int unlockLvl, int x, int y, ArrayList<ImageIcon> appereance, ArrayList<File> sounds, JLabel frame, Piece[][] warzone,WarriorType type, int space) {
         super(ElementType.warrior, name, health, damage, damageXsecond, range, lvl, unlockLvl, x, y, appereance, sounds, frame, warzone);
         this.type = type;
         this.objective = new ArrayList<>();
@@ -42,7 +41,8 @@ public abstract class Warrior extends Piece {
     
     
     @Override
-    public void deploy(int x, int y){
+    public void deploy(int x, int y,Piece[][] warzone){
+        this.setWarzone(warzone);
         this.setX(x);
         this.setY(y);
         this.start();
@@ -73,6 +73,18 @@ public abstract class Warrior extends Piece {
 
     public int getCost() {
         return cost;
+    }
+    
+    static public String  getWarrior(Warrior warrior){
+        String  info = "";
+        info += "Name: "+warrior.getPieceName()+" \n";
+        info += "Damage: "+warrior.getDamage()+" \n";
+        info += "Health: "+warrior.getHealth()+" \n";
+        info += "Cost: "+warrior.getCost()+" \n";
+        info += "Range: "+warrior.getRange()+" \n";
+        info += "Damage per Second: "+warrior.getDamageXsecond();
+        
+        return info;
     }
     
 }

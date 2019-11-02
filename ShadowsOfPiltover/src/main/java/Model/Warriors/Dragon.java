@@ -19,7 +19,7 @@ import java.util.logging.Logger;
  */
 public class Dragon extends Warrior {
     public Dragon(int lvl){
-        super(1000,"Dragon",1,1,1, 7, lvl, 1, 0, 0, new ArrayList<>(), new ArrayList<>(), null, null,WarriorType.Airborne,1);
+        super(700,"Dragon",1,1,1, 7, lvl, 1, 0, 0, new ArrayList<>(), new ArrayList<>(), null, null,WarriorType.Airborne,5);
         this.setHealth(60+(lvl*0.5));
         this.setDamage(10+(lvl*4));
     }

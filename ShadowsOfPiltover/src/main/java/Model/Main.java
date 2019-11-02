@@ -44,11 +44,12 @@ public class Main {
         
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                MainWindow main = new MainWindow();
+               MainWindow main = new MainWindow();
                 DataBase dataBase = new DataBase();
 //                User user = new User("Nacho","1234");
 //                user.currentLvl = 5;
-//                Game game = new Game(user,dataBase);
+//                Piece[][] warzone = BoardGenerator.generateBoard(dataBase.templates.get(4), 4);
+//                Game game = new Game(user,warzone);
 //                game.warzone[2][2] = new Skeleton(5);
 //                game.warzone[4][10] = new Dragon(5);
 //                game.warzone[1][1] = new Archer(5);
@@ -61,11 +62,11 @@ public class Main {
 //                game.printWarzone();
 //                
 //                
-//                game.warzone[1][1].deploy(1,1);
-//                game.warzone[2][2].deploy(2,2);
-//                game.warzone[4][10].deploy(4,10);
-//                game.warzone[3][5].deploy(3,5);
-//                game.warzone[6][4].deploy(6,4);
+//                game.warzone[1][1].deploy(1,1,warzone);
+//                game.warzone[2][2].deploy(2,2,warzone);
+//                game.warzone[4][10].deploy(4,10,warzone);
+//                game.warzone[3][5].deploy(3,5,warzone);
+//                game.warzone[6][4].deploy(6,4,warzone);
 //                game.activateDeffenses();
 
                 DataBaseController db = new DataBaseController(main,dataBase);

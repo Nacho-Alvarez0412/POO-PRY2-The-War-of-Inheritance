@@ -5,6 +5,7 @@
  */
 package Controller;
 
+import Model.DataBase;
 import View.MenuUser;
 import Model.User;
 import java.awt.event.ActionEvent;
@@ -20,11 +21,13 @@ public class UserMenuController
     private MenuUser vista;
     private User modelo;
     private boolean evento;
+    private DataBase database;
 
-    public UserMenuController(MenuUser vista, User modelo) {
+    public UserMenuController(MenuUser vista, User modelo,DataBase database) {
         this.vista = vista;
         this.modelo = modelo;
         this.evento = false;
+        this.database = database;
         _init_();
     }
     
@@ -54,8 +57,9 @@ public class UserMenuController
         }
         else if (e.getSource().equals(vista.NewJourneyButton)){
             evento = true;
-            SelectArmyController controller = new SelectArmyController(modelo);
+            SelectArmyController controller = new SelectArmyController(modelo,database);
             controller._init_();
+            this.vista.dispose();
 
         }
     } 

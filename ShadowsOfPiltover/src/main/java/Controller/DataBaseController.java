@@ -45,6 +45,7 @@ public class DataBaseController implements ActionListener{
         }
         
         else if (e.getSource().equals(view.NewUserButton)){
+            evento = true;
             boolean created = model.createUser(view.UsernameTextField.getText(), view.PasswordTextField.getText());
             if(created){
                 JOptionPane.showMessageDialog(view, "User created Succesfully");
@@ -56,11 +57,12 @@ public class DataBaseController implements ActionListener{
         }
         
         else if(e.getSource().equals(view.jButton1)){
+            evento = true;
             boolean authentication = model.authenticate(view.UsernameTextField.getText(), view.PasswordTextField.getText());
             if(authentication){
                 User user = model.getUser(view.UsernameTextField.getText());
                 
-                UserMenuController userMenu = new UserMenuController(new MenuUser(),user);
+                UserMenuController userMenu = new UserMenuController(new MenuUser(),user,model);
                 view.setVisible(false);
                 view.dispose();
                 userMenu._init_();

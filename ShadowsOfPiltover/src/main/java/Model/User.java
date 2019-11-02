@@ -29,8 +29,8 @@ public class User implements Serializable {
         this.password = password;
         this.currentLvl = 1;
         this.army = new ArrayList<>();
-        this.gold = 800;
-        this.campSize = 4;
+        this.gold = 1800;
+        this.campSize = 14;
     }
 
     public int getGold() {

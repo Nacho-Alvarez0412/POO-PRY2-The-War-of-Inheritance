@@ -21,11 +21,10 @@ public class Game extends Thread {
     ArrayList<Warrior> army;
     DataBase dataBase;
     
-    Game(User user,DataBase dataBase){
-        this.lvl = user.getCurrentLvl();
-        this.dataBase = dataBase;
-        warzone = BoardGenerator.generateBoard(dataBase.templates.get(lvl-1), lvl);
-        gold = 5+(2*(lvl-1));
+    public Game(User user,Piece[][] warzone){
+        this.user = user;
+        this.warzone = warzone;
+        gold = 250*(2*(lvl-1));
     }
     
     public void printWarzone(){
@@ -44,7 +43,7 @@ public class Game extends Thread {
         for(int i = 0 ; i<= 14 ; i++){
             for(int j = 0 ; j <= 14 ; j++){
                 if(warzone[i][j] != null && warzone[i][j].getElementType() == ElementType.deffense){
-                    warzone[i][j].deploy(i, j);
+                    warzone[i][j].deploy(i, j,warzone);
                 }
             }
         }

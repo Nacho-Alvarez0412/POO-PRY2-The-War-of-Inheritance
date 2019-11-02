@@ -10,6 +10,7 @@ import Model.Enums.ElementType;
 import java.io.File;
 import java.util.ArrayList;
 import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
 /**
@@ -27,14 +28,14 @@ public abstract class Piece extends Thread implements IComportamiento {
     
     private int x;
     private int y;
-    private ArrayList<Icon> appereance;
+    private ArrayList<ImageIcon> appereance;
     private ArrayList<File> sounds;
     private JLabel frame;
     private Piece[][] warzone;
     private ElementType elementType;
     private ArrayList<Piece> inRange;
 
-    public Piece(ElementType elementType,String name, int health, int damage, int damageXsecond, int range, int lvl, int unlockLvl, int x, int y, ArrayList<Icon> appereance, ArrayList<File> sounds, JLabel frame,Piece[][] warzone) {
+    public Piece(ElementType elementType,String name, int health, int damage, int damageXsecond, int range, int lvl, int unlockLvl, int x, int y, ArrayList<ImageIcon> appereance, ArrayList<File> sounds, JLabel frame,Piece[][] warzone) {
         this.name = name;
         this.health = health;
         this.damage = damage;
@@ -132,11 +133,11 @@ public abstract class Piece extends Thread implements IComportamiento {
         this.y = y;
     }
 
-    public ArrayList<Icon> getAppereance() {
+    public ArrayList<ImageIcon> getAppereance() {
         return appereance;
     }
 
-    public void setAppereance(ArrayList<Icon> appereance) {
+    public void setAppereance(ArrayList<ImageIcon> appereance) {
         this.appereance = appereance;
     }
 

@@ -14,5 +14,5 @@ public interface IComportamiento {
     public void attack();
     public void die();
     public void sound();
-    public void deploy(int x,int y);
+    public void deploy(int x,int y,Piece[][] warzone);
 }

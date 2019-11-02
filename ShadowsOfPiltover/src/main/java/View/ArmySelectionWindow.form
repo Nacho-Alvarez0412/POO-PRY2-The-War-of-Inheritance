@@ -57,14 +57,14 @@
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="1100" y="140" width="170" height="90"/>
+          <AbsoluteConstraints x="1070" y="140" width="170" height="90"/>
         </Constraint>
       </Constraints>
     </Component>
     <Component class="javax.swing.JLabel" name="CantGoldLabel">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Pristina" size="48" style="1"/>
+          <Font name="Pristina" size="36" style="1"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="0" green="0" red="0" type="rgb"/>
@@ -76,25 +76,25 @@
       </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="1280" y="140" width="80" height="70"/>
+          <AbsoluteConstraints x="1230" y="150" width="80" height="70"/>
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JButton" name="Warrior1">
+    <Component class="javax.swing.JButton" name="Warrior4">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="2" name="C:\Users\nacho\Desktop\Proyectos\Java\The-War-of-Inheritance\ShadowsOfPiltover\src\main\java\View\DragonAssets\DragonAttacking.gif"/>
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Warrior1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Warrior4ActionPerformed"/>
       </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
       </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="360" y="210" width="180" height="120"/>
+          <AbsoluteConstraints x="870" y="210" width="180" height="120"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -110,7 +110,7 @@
       </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="130" y="210" width="160" height="120"/>
+          <AbsoluteConstraints x="380" y="210" width="160" height="120"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -132,7 +132,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JButton" name="Warrior4">
+    <Component class="javax.swing.JButton" name="Warrior6">
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
       </AuxValues>
@@ -157,7 +157,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JButton" name="Warrior6">
+    <Component class="javax.swing.JButton" name="Warrior1">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="2" name="C:\Users\nacho\Desktop\Proyectos\Java\The-War-of-Inheritance\ShadowsOfPiltover\src\main\java\View\KnightSkeletonAssets\KnightSAttack.gif"/>
@@ -168,7 +168,7 @@
       </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="870" y="210" width="170" height="-1"/>
+          <AbsoluteConstraints x="120" y="210" width="170" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -197,7 +197,6 @@
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="2" name="C:\Users\nacho\Desktop\Proyectos\Java\The-War-of-Inheritance\ShadowsOfPiltover\src\main\java\View\Images\Fight.png"/>
         </Property>
-        <Property name="actionCommand" type="java.lang.String" value=""/>
       </Properties>
       <Events>
         <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="FightButtonMouseEntered"/>
@@ -221,7 +220,7 @@
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="1090" y="270" width="190" height="90"/>
+          <AbsoluteConstraints x="1070" y="270" width="190" height="90"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -252,7 +251,7 @@
       </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="1280" y="280" width="80" height="70"/>
+          <AbsoluteConstraints x="1240" y="270" width="80" height="70"/>
         </Constraint>
       </Constraints>
     </Component>

@@ -12,6 +12,7 @@ import Model.Enums.WarriorType;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
 /**
@@ -25,7 +26,13 @@ public class Cannon extends Deffense{
         this.setDamage(15+(lvl*2));
         this.setHealth(150+(lvl*2.5));
         this.setDamageXsecond(2);
-        this.setFrame(null); // Cambiar!!!!!!
+        
+        ArrayList<ImageIcon> appereance = new ArrayList();
+        appereance.add(new ImageIcon("C:\\Users\\nacho\\Desktop\\Proyectos\\Java\\The-War-of-Inheritance\\ShadowsOfPiltover\\src\\main\\java\\View\\DeffenseAssets\\Cannon.png"));
+        setAppereance(appereance);
+        this.setFrame(new JLabel()); 
+        this.getFrame().setIcon(appereance.get(0));
+        
         this.setUnlockLvl(1);
         this.objective.add(WarriorType.Hero);
         this.objective.add(WarriorType.Ranged);

@@ -5,7 +5,6 @@
  */
 package Model;
 
-import Model.Enums.PieceTypes;
 import java.io.Serializable;
 import java.util.ArrayList;
 
@@ -15,8 +14,8 @@ import java.util.ArrayList;
  */
 public class DataBase implements Serializable {
     //Atributos
-    ArrayList<User> users;
-    ArrayList<int[][]> templates;
+    public ArrayList<User> users;
+    public ArrayList<int[][]> templates;
     
     public DataBase(){
         DataBase dataBase = (DataBase) FileManager.readObject("DataBase.txt");

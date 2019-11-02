@@ -12,6 +12,7 @@ import Model.Enums.WarriorType;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
 /**
@@ -22,10 +23,17 @@ public class Bomb extends Deffense {
     
     public Bomb(int lvl, Piece[][] warzone) {
         super("Bomb", 1, 1, 1, 2, lvl, 1, 0, 0, new ArrayList<>(), new ArrayList<>(), null, warzone, new ArrayList<>(), DeffenseType.Bomb);
-        this.setDamage(35+(lvl*2));
+        this.setDamage(100+(lvl*2));
         this.setHealth(400);
         this.setDamageXsecond(0);
-        this.setFrame(null); // Cambiar!!!!!!
+        
+        ArrayList<ImageIcon> appereance = new ArrayList();
+        appereance.add(new ImageIcon("C:\\Users\\nacho\\Desktop\\Proyectos\\Java\\The-War-of-Inheritance\\ShadowsOfPiltover\\src\\main\\java\\View\\DeffenseAssets\\Bomb.png"));
+        setAppereance(appereance);
+        this.setFrame(new JLabel()); 
+        this.getFrame().setIcon(appereance.get(0));
+        
+        
         this.setUnlockLvl(8);
         this.objective.add(WarriorType.Hero);
         this.objective.add(WarriorType.Ranged);

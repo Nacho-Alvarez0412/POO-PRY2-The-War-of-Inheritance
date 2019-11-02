@@ -29,11 +29,18 @@ public class BoardGenerator {
                 if(template[i][j] != 0){
                     if(template[i][j] == 4){
                         board[i][j] = new Wall(lvl,board);
+                        board[i][j].setX(j);
+                        board[i][j].setY(i);
+                        
                         
                     }
                     
                     else if(template[i][j] == 3){
+                        
                         board[i][j] = new TownHall(lvl,board);
+                        board[i][j].setX(j);
+                        board[i][j].setY(i);
+                        System.out.println(board[i][j].getX());System.out.println(board[i][j].getY());
                     }
                     
                     else if(template[i][j] == 2){
@@ -43,6 +50,8 @@ public class BoardGenerator {
                             case 4: //Creates Bomb
                                 if(lvl>=8){
                                     board[i][j] = new Bomb(lvl-8,board);
+                                    board[i][j].setX(j);
+                                    board[i][j].setY(i);
                                     break;
                                 }
                                 else
@@ -50,6 +59,8 @@ public class BoardGenerator {
                             case 3: //Creates Mortar
                                 if(lvl>=6){
                                     board[i][j] = new Mortar(lvl-5,board);
+                                    board[i][j].setX(j);
+                                    board[i][j].setY(i);
                                     break;
                                 }
                                 else
@@ -57,6 +68,8 @@ public class BoardGenerator {
                             case 2: //Creates Tower
                                 if(lvl>=4){
                                     board[i][j] = new Tower(lvl-3,board);
+                                    board[i][j].setX(j);
+                                    board[i][j].setY(i);
                                     break;
                                 }
                                 else
@@ -64,12 +77,16 @@ public class BoardGenerator {
                             case 1: //Creates Firecracker
                                 if(lvl>=3){
                                     board[i][j] = new Firecracker(lvl-2,board);
+                                    board[i][j].setX(j);
+                                    board[i][j].setY(i);
                                     break;
                                 }
                                 else
                                     randomInt = 0;
                             default: //Creates Cannon
                                 board[i][j] = new Cannon(lvl,board);
+                                board[i][j].setX(j);
+                                board[i][j].setY(i);
                                 break;                                
                         }
                     }

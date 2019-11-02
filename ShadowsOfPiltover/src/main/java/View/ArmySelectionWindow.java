@@ -22,24 +22,24 @@ public class ArmySelectionWindow extends javax.swing.JFrame {
         this.FightHoverLabel.setVisible(false);
 
         
-        this.Warrior1.setOpaque(false);
-        this.Warrior1.setContentAreaFilled(false);
-        this.Warrior1.setBorderPainted(false);
+        this.Warrior4.setOpaque(false);
+        this.Warrior4.setContentAreaFilled(false);
+        this.Warrior4.setBorderPainted(false);
         this.Warrior2.setOpaque(false);
         this.Warrior2.setContentAreaFilled(false);
         this.Warrior2.setBorderPainted(false);
         this.Warrior3.setOpaque(false);
         this.Warrior3.setContentAreaFilled(false);
         this.Warrior3.setBorderPainted(false);
-        this.Warrior4.setOpaque(false);
-        this.Warrior4.setContentAreaFilled(false);
-        this.Warrior4.setBorderPainted(false);
-        this.Warrior5.setOpaque(false);
-        this.Warrior5.setContentAreaFilled(false);
-        this.Warrior5.setBorderPainted(false);
         this.Warrior6.setOpaque(false);
         this.Warrior6.setContentAreaFilled(false);
         this.Warrior6.setBorderPainted(false);
+        this.Warrior5.setOpaque(false);
+        this.Warrior5.setContentAreaFilled(false);
+        this.Warrior5.setBorderPainted(false);
+        this.Warrior1.setOpaque(false);
+        this.Warrior1.setContentAreaFilled(false);
+        this.Warrior1.setBorderPainted(false);
         this.Warrior7.setOpaque(false);
         this.Warrior7.setContentAreaFilled(false);
         this.Warrior7.setBorderPainted(false);
@@ -67,12 +67,12 @@ public class ArmySelectionWindow extends javax.swing.JFrame {
         FightHoverLabel = new javax.swing.JLabel();
         GoldLabel = new javax.swing.JLabel();
         CantGoldLabel = new javax.swing.JLabel();
-        Warrior1 = new javax.swing.JButton();
+        Warrior4 = new javax.swing.JButton();
         Warrior2 = new javax.swing.JButton();
         Warrior3 = new javax.swing.JButton();
-        Warrior4 = new javax.swing.JButton();
-        Warrior5 = new javax.swing.JButton();
         Warrior6 = new javax.swing.JButton();
+        Warrior5 = new javax.swing.JButton();
+        Warrior1 = new javax.swing.JButton();
         Warrior7 = new javax.swing.JButton();
         Warrior8 = new javax.swing.JButton();
         FightButton = new javax.swing.JButton();
@@ -95,27 +95,27 @@ public class ArmySelectionWindow extends javax.swing.JFrame {
 
         GoldLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\nacho\\Desktop\\Proyectos\\Java\\The-War-of-Inheritance\\ShadowsOfPiltover\\src\\main\\java\\View\\Images\\Gold.png")); // NOI18N
         getContentPane().add(GoldLabel);
-        GoldLabel.setBounds(1100, 140, 170, 90);
+        GoldLabel.setBounds(1070, 140, 170, 90);
 
-        CantGoldLabel.setFont(new java.awt.Font("Pristina", 1, 48)); // NOI18N
+        CantGoldLabel.setFont(new java.awt.Font("Pristina", 1, 36)); // NOI18N
         CantGoldLabel.setForeground(new java.awt.Color(0, 0, 0));
         CantGoldLabel.setText("0");
         getContentPane().add(CantGoldLabel);
-        CantGoldLabel.setBounds(1280, 140, 80, 70);
+        CantGoldLabel.setBounds(1230, 150, 80, 70);
 
-        Warrior1.setIcon(new javax.swing.ImageIcon("C:\\Users\\nacho\\Desktop\\Proyectos\\Java\\The-War-of-Inheritance\\ShadowsOfPiltover\\src\\main\\java\\View\\DragonAssets\\DragonAttacking.gif")); // NOI18N
-        Warrior1.addActionListener(new java.awt.event.ActionListener() {
+        Warrior4.setIcon(new javax.swing.ImageIcon("C:\\Users\\nacho\\Desktop\\Proyectos\\Java\\The-War-of-Inheritance\\ShadowsOfPiltover\\src\\main\\java\\View\\DragonAssets\\DragonAttacking.gif")); // NOI18N
+        Warrior4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Warrior1ActionPerformed(evt);
+                Warrior4ActionPerformed(evt);
             }
         });
-        getContentPane().add(Warrior1);
-        Warrior1.setBounds(360, 210, 180, 120);
+        getContentPane().add(Warrior4);
+        Warrior4.setBounds(870, 210, 180, 120);
 
         Warrior2.setIcon(new javax.swing.ImageIcon("C:\\Users\\nacho\\Desktop\\Proyectos\\Java\\The-War-of-Inheritance\\ShadowsOfPiltover\\src\\main\\java\\View\\ArcherAssets\\ArcherAttack.gif")); // NOI18N
         Warrior2.setToolTipText("Isaaaaaa sea necio banano");
         getContentPane().add(Warrior2);
-        Warrior2.setBounds(130, 210, 160, 120);
+        Warrior2.setBounds(380, 210, 160, 120);
 
         Warrior3.setIcon(new javax.swing.ImageIcon("C:\\Users\\nacho\\Desktop\\Proyectos\\Java\\The-War-of-Inheritance\\ShadowsOfPiltover\\src\\main\\java\\View\\BearAssets\\BearAttack.gif")); // NOI18N
         Warrior3.addActionListener(new java.awt.event.ActionListener() {
@@ -125,23 +125,22 @@ public class ArmySelectionWindow extends javax.swing.JFrame {
         });
         getContentPane().add(Warrior3);
         Warrior3.setBounds(620, 210, 170, 120);
-        getContentPane().add(Warrior4);
-        Warrior4.setBounds(370, 420, 170, 130);
+        getContentPane().add(Warrior6);
+        Warrior6.setBounds(370, 420, 170, 130);
 
         Warrior5.setIcon(new javax.swing.ImageIcon("C:\\Users\\nacho\\Desktop\\Proyectos\\Java\\The-War-of-Inheritance\\ShadowsOfPiltover\\src\\main\\java\\View\\GolemAssets\\GolemAttack.gif")); // NOI18N
         getContentPane().add(Warrior5);
         Warrior5.setBounds(130, 420, 155, 129);
 
-        Warrior6.setIcon(new javax.swing.ImageIcon("C:\\Users\\nacho\\Desktop\\Proyectos\\Java\\The-War-of-Inheritance\\ShadowsOfPiltover\\src\\main\\java\\View\\KnightSkeletonAssets\\KnightSAttack.gif")); // NOI18N
-        getContentPane().add(Warrior6);
-        Warrior6.setBounds(870, 210, 170, 130);
+        Warrior1.setIcon(new javax.swing.ImageIcon("C:\\Users\\nacho\\Desktop\\Proyectos\\Java\\The-War-of-Inheritance\\ShadowsOfPiltover\\src\\main\\java\\View\\KnightSkeletonAssets\\KnightSAttack.gif")); // NOI18N
+        getContentPane().add(Warrior1);
+        Warrior1.setBounds(120, 210, 170, 130);
         getContentPane().add(Warrior7);
         Warrior7.setBounds(620, 420, 170, 130);
         getContentPane().add(Warrior8);
         Warrior8.setBounds(870, 420, 170, 130);
 
         FightButton.setIcon(new javax.swing.ImageIcon("C:\\Users\\nacho\\Desktop\\Proyectos\\Java\\The-War-of-Inheritance\\ShadowsOfPiltover\\src\\main\\java\\View\\Images\\Fight.png")); // NOI18N
-        FightButton.setActionCommand("");
         FightButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 FightButtonMouseEntered(evt);
@@ -160,7 +159,7 @@ public class ArmySelectionWindow extends javax.swing.JFrame {
 
         LevelLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\nacho\\Desktop\\Proyectos\\Java\\The-War-of-Inheritance\\ShadowsOfPiltover\\src\\main\\java\\View\\Images\\Level.png")); // NOI18N
         getContentPane().add(LevelLabel);
-        LevelLabel.setBounds(1090, 270, 190, 90);
+        LevelLabel.setBounds(1070, 270, 190, 90);
 
         ArmyCapacityLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\nacho\\Desktop\\Proyectos\\Java\\The-War-of-Inheritance\\ShadowsOfPiltover\\src\\main\\java\\View\\Images\\ArmyCapacity.png")); // NOI18N
         getContentPane().add(ArmyCapacityLabel);
@@ -170,7 +169,7 @@ public class ArmySelectionWindow extends javax.swing.JFrame {
         CantLvlLabel.setForeground(new java.awt.Color(0, 0, 0));
         CantLvlLabel.setText("0");
         getContentPane().add(CantLvlLabel);
-        CantLvlLabel.setBounds(1280, 280, 80, 70);
+        CantLvlLabel.setBounds(1240, 270, 80, 70);
 
         CanrArmyLabel.setFont(new java.awt.Font("Pristina", 1, 48)); // NOI18N
         CanrArmyLabel.setForeground(new java.awt.Color(0, 0, 0));
@@ -186,9 +185,9 @@ public class ArmySelectionWindow extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void Warrior1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Warrior1ActionPerformed
+    private void Warrior4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Warrior4ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_Warrior1ActionPerformed
+    }//GEN-LAST:event_Warrior4ActionPerformed
 
     private void Warrior3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Warrior3ActionPerformed
         // TODO add your handling code here:

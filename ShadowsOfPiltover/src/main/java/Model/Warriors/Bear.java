@@ -5,10 +5,8 @@
  */
 package Model.Warriors;
 
-import Model.Enums.DeffenseType;
 import Model.Enums.ElementType;
 import Model.Enums.WarriorType;
-import Model.Piece;
 import Model.Warrior;
 import java.util.ArrayList;
 import java.util.logging.Level;
@@ -18,17 +16,18 @@ import java.util.logging.Logger;
  *
  * @author nacho
  */
-public class Archer extends Warrior {
-    public Archer(int lvl){
-        super(200,"Archer",1,1,1, 3, lvl, 1, 0, 0, new ArrayList<>(), new ArrayList<>(), null, null,WarriorType.Ranged,2);
-        this.setHealth(80+(lvl*0.5));
-        this.setDamage(10+(lvl*4));
-        this.setDamageXsecond(3);
-        
+public class Bear extends Warrior{
+
+    public Bear(int lvl){
+        super(400,"Bear",1,1,1, 1, lvl, 1, 0, 0, new ArrayList<>(), new ArrayList<>(), null, null,WarriorType.Meele,3);
+        this.setHealth(100+(lvl*0.5));
+        this.setDamage(35+(lvl*4));
+        this.setUnlockLvl(5);
+        this.setRange(1);
+        this.setDamageXsecond(2);
     }
 
-   
-    @Override
+   @Override
     public void run(){
         while (getHealth()>0){
             if(deffender != null){
@@ -48,7 +47,7 @@ public class Archer extends Warrior {
             try {
                 sleep((long)getDamageXsecond() *1000);
             } catch (InterruptedException ex) {
-                Logger.getLogger(Archer.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Skeleton.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
         die();
@@ -94,11 +93,10 @@ public class Archer extends Warrior {
 
     @Override
     public void die() {
-        System.out.println(getPieceName()+"Fui Destruido...");
+        System.out.println(getPieceName()+",Fui Destruido...");
     }
 
     @Override
     public void sound() {
     }
-
 }
