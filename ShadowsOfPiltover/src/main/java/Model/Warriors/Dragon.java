@@ -12,6 +12,8 @@ import Model.Warrior;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 
 /**
  *
@@ -22,75 +24,21 @@ public class Dragon extends Warrior {
         super(700,"Dragon",1,1,1, 7, lvl, 1, 0, 0, new ArrayList<>(), new ArrayList<>(), null, null,WarriorType.Airborne,5);
         this.setHealth(60+(lvl*0.5));
         this.setDamage(10+(lvl*4));
+        loadImages();
     }
-@Override
-    public void run(){
-        while (getHealth()>0){
-            if(deffender != null){
-                System.out.println(getPieceName()+",Target: "+deffender.getPieceName());
-                attack();
-            }
-            else{
-                setInRange(radarSwap(ElementType.deffense));
-                
-                if(getInRange().isEmpty()){
-                    move();
-                }
-                else
-                    targetObjective();
-            }
-       
-            try {
-                sleep((long)getDamageXsecond() *1000);
-            } catch (InterruptedException ex) {
-                Logger.getLogger(Dragon.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
-        die();
-    }
-
-    @Override
-    public void move() {
-        int x = getX();
-        int y = getY();
-        
-        if(x<getTownHallX())
-            x++;
-        else if(x>getTownHallX())
-            x--;
-        
-        if(y<getTownHallY())
-            y++;
-        else if(y>getTownHallY())
-            y--;
-        
-        if(getWarzone()[x][y] == null){
-            getWarzone()[x][y] = this;
-            getWarzone()[getX()][getY()] = null;
-            setX(x);
-            setY(y);
-        }
-    }
-
-    @Override
-    public void attack() {
-        if(deffender.getHealth()>0){
-            deffender.setHealth(deffender.getHealth()-getDamage());
-        }
-        else{
-            System.out.println(deffender.getPieceName()+" abatido");
-            getInRange().remove(deffender);
-            deffender = null;
-            
-            
-        }
+    
+    private void loadImages(){
+        ArrayList<ImageIcon> appereance = new ArrayList();
+        appereance.add(new ImageIcon("C:\\Users\\nacho\\Desktop\\Proyectos\\Java\\The-War-of-Inheritance\\ShadowsOfPiltover\\src\\main\\java\\View\\DragonAssets\\DragonMove.gif"));
+        appereance.add(new ImageIcon("C:\\Users\\nacho\\Desktop\\Proyectos\\Java\\The-War-of-Inheritance\\ShadowsOfPiltover\\src\\main\\java\\View\\DragonAssets\\DragonAttack.gif"));
+        appereance.add(new ImageIcon("C:\\Users\\nacho\\Desktop\\Proyectos\\Java\\The-War-of-Inheritance\\ShadowsOfPiltover\\src\\main\\java\\View\\DragonAssets\\DragonDie.gif"));
+        appereance.add(new ImageIcon("C:\\Users\\nacho\\Desktop\\Proyectos\\Java\\The-War-of-Inheritance\\ShadowsOfPiltover\\src\\main\\java\\View\\Images\\Grave.png"));
+        setAppereance(appereance);
+        this.setFrame(new JLabel()); 
+        this.getFrame().setIcon(appereance.get(0));
     }
     
 
-    @Override
-    public void die() {
-        System.out.println(getPieceName()+",Fui Destruido...");
-    }
 
     @Override
     public void sound() {

@@ -46,8 +46,9 @@ public class Main {
             public void run() {
                MainWindow main = new MainWindow();
                 DataBase dataBase = new DataBase();
-//                User user = new User("Nacho","1234");
-//                user.currentLvl = 5;
+                User user = new User("Nacho","1234");
+                user.currentLvl = 10;
+                dataBase.users.add(user);
 //                Piece[][] warzone = BoardGenerator.generateBoard(dataBase.templates.get(4), 4);
 //                Game game = new Game(user,warzone);
 //                game.warzone[2][2] = new Skeleton(5);

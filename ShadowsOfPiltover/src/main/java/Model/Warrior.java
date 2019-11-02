@@ -8,8 +8,11 @@ package Model;
 import Model.Enums.DeffenseType;
 import Model.Enums.ElementType;
 import Model.Enums.WarriorType;
+import Model.Warriors.Dragon;
 import java.io.File;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
@@ -45,6 +48,7 @@ public abstract class Warrior extends Piece {
         this.setWarzone(warzone);
         this.setX(x);
         this.setY(y);
+        warzone[x][y] = this;
         this.start();
     }
     
@@ -85,6 +89,86 @@ public abstract class Warrior extends Piece {
         info += "Damage per Second: "+warrior.getDamageXsecond();
         
         return info;
+    }
+    
+    @Override
+    public void run(){
+        while (getHealth()>0){
+            if(deffender != null){
+                System.out.println(getPieceName()+",Target: "+deffender.getPieceName());
+                attack();
+            }
+            else{
+                setInRange(radarSwap(ElementType.deffense));
+                
+                if(getInRange().isEmpty()){
+                    move();
+                }
+                else
+                    targetObjective();
+            }
+       
+            try {
+                sleep((long)getDamageXsecond() *1000);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(Dragon.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        die();
+    }
+
+    @Override
+    public void move() {
+        this.getFrame().setIcon(appereance.get(0));
+        int x = getX();
+        int y = getY();
+        
+        if(x<getTownHallX())
+            x++;
+        else if(x>getTownHallX())
+            x--;
+        
+        if(y<getTownHallY())
+            y++;
+        else if(y>getTownHallY())
+            y--;
+        
+        if(getWarzone()[x][y] == null){
+            getWarzone()[x][y] = this;
+            getWarzone()[getX()][getY()] = null;
+            setX(x);
+            setY(y);
+            this.getFrame().setLocation(x*116, y*66);
+        }
+    }
+
+    @Override
+    public void attack() {
+        this.getFrame().setIcon(appereance.get(1));
+        if(deffender.getHealth()>0){
+            deffender.setHealth(deffender.getHealth()-getDamage());
+        }
+        else{
+            System.out.println(deffender.getPieceName()+" abatido");
+            getInRange().remove(deffender);
+            deffender = null;
+            
+            
+        }
+    }
+    
+
+    @Override
+    public void die() {
+        this.getFrame().setIcon(appereance.get(2));
+        
+        try {
+            sleep(2000);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Warrior.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        this.getFrame().setIcon(appereance.get(3));
+        System.out.println(getPieceName()+",Fui Destruido...");
     }
     
 }

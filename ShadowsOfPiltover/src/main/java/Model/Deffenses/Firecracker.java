@@ -28,7 +28,8 @@ public class Firecracker extends Deffense{
         this.setDamageXsecond(2);
         
         ArrayList<ImageIcon> appereance = new ArrayList();
-        appereance.add(new ImageIcon("C:\\Users\\nacho\\Desktop\\Proyectos\\Java\\The-War-of-Inheritance\\ShadowsOfPiltover\\src\\main\\java\\View\\DeffenseAssets\\AirDeffense.png"));
+        appereance.add(new ImageIcon("C:\\Users\\nacho\\Desktop\\Proyectos\\Java\\The-War-of-Inheritance\\ShadowsOfPiltover\\src\\main\\java\\View\\DeffenseAssets\\AirDefense.png"));
+        appereance.add(new ImageIcon("C:\\Users\\nacho\\Desktop\\Proyectos\\Java\\The-War-of-Inheritance\\ShadowsOfPiltover\\src\\main\\java\\View\\DeffenseAssets\\Debris.png"));
         setAppereance(appereance);
         this.setFrame(new JLabel()); 
         this.getFrame().setIcon(appereance.get(0));
@@ -78,6 +79,7 @@ public class Firecracker extends Deffense{
 
     @Override
     public void die() {
+        this.getFrame().setIcon(appereance.get(1));
         System.out.println(getPieceName()+",Fui Destruido...");
     }
 

@@ -103,7 +103,7 @@ public class ArmySelectionWindow extends javax.swing.JFrame {
         getContentPane().add(CantGoldLabel);
         CantGoldLabel.setBounds(1230, 150, 80, 70);
 
-        Warrior4.setIcon(new javax.swing.ImageIcon("C:\\Users\\nacho\\Desktop\\Proyectos\\Java\\The-War-of-Inheritance\\ShadowsOfPiltover\\src\\main\\java\\View\\DragonAssets\\DragonAttacking.gif")); // NOI18N
+        Warrior4.setIcon(new javax.swing.ImageIcon("C:\\Users\\nacho\\Desktop\\Proyectos\\Java\\The-War-of-Inheritance\\ShadowsOfPiltover\\src\\main\\java\\View\\DragonAssets\\DragonAttackShow.gif")); // NOI18N
         Warrior4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Warrior4ActionPerformed(evt);
@@ -112,12 +112,12 @@ public class ArmySelectionWindow extends javax.swing.JFrame {
         getContentPane().add(Warrior4);
         Warrior4.setBounds(870, 210, 180, 120);
 
-        Warrior2.setIcon(new javax.swing.ImageIcon("C:\\Users\\nacho\\Desktop\\Proyectos\\Java\\The-War-of-Inheritance\\ShadowsOfPiltover\\src\\main\\java\\View\\ArcherAssets\\ArcherAttack.gif")); // NOI18N
+        Warrior2.setIcon(new javax.swing.ImageIcon("C:\\Users\\nacho\\Desktop\\Proyectos\\Java\\The-War-of-Inheritance\\ShadowsOfPiltover\\src\\main\\java\\View\\ArcherAssets\\ArcherAttackShow.gif")); // NOI18N
         Warrior2.setToolTipText("Isaaaaaa sea necio banano");
         getContentPane().add(Warrior2);
         Warrior2.setBounds(380, 210, 160, 120);
 
-        Warrior3.setIcon(new javax.swing.ImageIcon("C:\\Users\\nacho\\Desktop\\Proyectos\\Java\\The-War-of-Inheritance\\ShadowsOfPiltover\\src\\main\\java\\View\\BearAssets\\BearAttack.gif")); // NOI18N
+        Warrior3.setIcon(new javax.swing.ImageIcon("C:\\Users\\nacho\\Desktop\\Proyectos\\Java\\The-War-of-Inheritance\\ShadowsOfPiltover\\src\\main\\java\\View\\BearAssets\\BearAttackShow.gif")); // NOI18N
         Warrior3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Warrior3ActionPerformed(evt);
@@ -132,7 +132,7 @@ public class ArmySelectionWindow extends javax.swing.JFrame {
         getContentPane().add(Warrior5);
         Warrior5.setBounds(130, 420, 155, 129);
 
-        Warrior1.setIcon(new javax.swing.ImageIcon("C:\\Users\\nacho\\Desktop\\Proyectos\\Java\\The-War-of-Inheritance\\ShadowsOfPiltover\\src\\main\\java\\View\\KnightSkeletonAssets\\KnightSAttack.gif")); // NOI18N
+        Warrior1.setIcon(new javax.swing.ImageIcon("C:\\Users\\nacho\\Desktop\\Proyectos\\Java\\The-War-of-Inheritance\\ShadowsOfPiltover\\src\\main\\java\\View\\KnightSkeletonAssets\\KnightSAttackShow.gif")); // NOI18N
         getContentPane().add(Warrior1);
         Warrior1.setBounds(120, 210, 170, 130);
         getContentPane().add(Warrior7);

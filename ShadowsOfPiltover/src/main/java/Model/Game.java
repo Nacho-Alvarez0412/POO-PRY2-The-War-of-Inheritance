@@ -5,8 +5,11 @@
  */
 package Model;
 
+import Model.Enums.DeffenseType;
 import Model.Enums.ElementType;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -18,26 +21,51 @@ public class Game extends Thread {
     Piece[][] warzone;
     double porcentage;
     int gold;
+    ArrayList<Deffense> deffenses;
     ArrayList<Warrior> army;
-    DataBase dataBase;
+    
     
     public Game(User user,Piece[][] warzone){
+        army = user.getArmy();
         this.user = user;
         this.warzone = warzone;
+        lvl = user.getCurrentLvl();
         gold = 250*(2*(lvl-1));
+        porcentage = 0;
     }
     
-    public void printWarzone(){
-        for(Piece[] i : warzone){
-            for(Piece j : i){
-                if(j == null)
-                    System.out.print("free,");
-                else
-                    System.out.print(j.getPieceName()+",");
+    public void setDeffenses(){
+        Deffense deffense;
+        for(Piece[] line : warzone) {
+            for(Piece element : line){
+                if(element.getElementType()== ElementType.deffense){
+                    deffense = (Deffense) element;
+
+                    if(deffense.type != DeffenseType.Wall)
+                        deffenses.add(deffense);
+                }
             }
-            System.out.println("");
         }
     }
+    
+    @Override
+    public void run(){
+        
+    }
+    
+    boolean isFighting(){
+        return army.stream().anyMatch((warrior) -> (warrior.getHealth() > 0 ));
+    }
+    
+    boolean isTownHallDestroyed(){
+        return deffenses.stream().anyMatch((deffense) -> (deffense.getHealth() < 0 && deffense.type == DeffenseType.TownHall ));
+    }
+    
+    boolean isDefending(){
+        return deffenses.stream().anyMatch((deffense) -> (deffense.getHealth() > 0 ));
+    }
+        
+    
     
     public void activateDeffenses(){
         for(int i = 0 ; i<= 14 ; i++){
@@ -48,5 +76,7 @@ public class Game extends Thread {
             }
         }
     }
+        
+   
         
 }

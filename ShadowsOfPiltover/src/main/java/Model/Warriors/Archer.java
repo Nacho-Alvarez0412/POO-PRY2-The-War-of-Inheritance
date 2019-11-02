@@ -13,6 +13,8 @@ import Model.Warrior;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 
 /**
  *
@@ -20,83 +22,25 @@ import java.util.logging.Logger;
  */
 public class Archer extends Warrior {
     public Archer(int lvl){
-        super(200,"Archer",1,1,1, 3, lvl, 1, 0, 0, new ArrayList<>(), new ArrayList<>(), null, null,WarriorType.Ranged,2);
+        super(200,"Archer",1,1,1, 2, lvl, 1, 0, 0, new ArrayList<>(), new ArrayList<>(), null, null,WarriorType.Ranged,2);
         this.setHealth(80+(lvl*0.5));
         this.setDamage(10+(lvl*4));
         this.setDamageXsecond(3);
-        
-    }
-
-   
-    @Override
-    public void run(){
-        while (getHealth()>0){
-            if(deffender != null){
-                System.out.println(getPieceName()+",Target: "+deffender.getPieceName());
-                attack();
-            }
-            else{
-                setInRange(radarSwap(ElementType.deffense));
-                
-                if(getInRange().isEmpty()){
-                    move();
-                }
-                else
-                    targetObjective();
-            }
-       
-            try {
-                sleep((long)getDamageXsecond() *1000);
-            } catch (InterruptedException ex) {
-                Logger.getLogger(Archer.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
-        die();
-    }
-
-    @Override
-    public void move() {
-        int x = getX();
-        int y = getY();
-        
-        if(x<getTownHallX())
-            x++;
-        else if(x>getTownHallX())
-            x--;
-        
-        if(y<getTownHallY())
-            y++;
-        else if(y>getTownHallY())
-            y--;
-        
-        if(getWarzone()[x][y] == null){
-            getWarzone()[x][y] = this;
-            getWarzone()[getX()][getY()] = null;
-            setX(x);
-            setY(y);
-        }
-    }
-
-    @Override
-    public void attack() {
-        if(deffender.getHealth()>0){
-            deffender.setHealth(deffender.getHealth()-getDamage());
-        }
-        else{
-            System.out.println(deffender.getPieceName()+" abatido");
-            getInRange().remove(deffender);
-            deffender = null;
-            
-            
-        }
+        loadImages();
+ 
     }
     
-
-    @Override
-    public void die() {
-        System.out.println(getPieceName()+"Fui Destruido...");
+    private void loadImages(){
+        ArrayList<ImageIcon> appereance = new ArrayList();
+        appereance.add(new ImageIcon("C:\\Users\\nacho\\Desktop\\Proyectos\\Java\\The-War-of-Inheritance\\ShadowsOfPiltover\\src\\main\\java\\View\\ArcherAssets\\ArcherMove.gif"));
+        appereance.add(new ImageIcon("C:\\Users\\nacho\\Desktop\\Proyectos\\Java\\The-War-of-Inheritance\\ShadowsOfPiltover\\src\\main\\java\\View\\ArcherAssets\\ArcherAttack.gif"));
+        appereance.add(new ImageIcon("C:\\Users\\nacho\\Desktop\\Proyectos\\Java\\The-War-of-Inheritance\\ShadowsOfPiltover\\src\\main\\java\\View\\ArcherAssets\\ArcherDie.gif"));
+        appereance.add(new ImageIcon("C:\\Users\\nacho\\Desktop\\Proyectos\\Java\\The-War-of-Inheritance\\ShadowsOfPiltover\\src\\main\\java\\View\\Images\\Grave.png"));
+        setAppereance(appereance);
+        this.setFrame(new JLabel()); 
+        this.getFrame().setIcon(appereance.get(0));
     }
-
+    
     @Override
     public void sound() {
     }

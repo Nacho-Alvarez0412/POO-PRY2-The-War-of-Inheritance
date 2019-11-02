@@ -28,7 +28,7 @@ public abstract class Piece extends Thread implements IComportamiento {
     
     private int x;
     private int y;
-    private ArrayList<ImageIcon> appereance;
+    public ArrayList<ImageIcon> appereance;
     private ArrayList<File> sounds;
     private JLabel frame;
     private Piece[][] warzone;

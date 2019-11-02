@@ -10,9 +10,11 @@ import Model.DataBase;
 import Model.Game;
 import Model.Piece;
 import Model.User;
+import Model.Warrior;
 import View.WarzoneWindow;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Random;
 
 /**
  *
@@ -30,12 +32,30 @@ public class WarzoneController implements ActionListener {
         this.database = database;
         warzone = BoardGenerator.generateBoard(database.templates.get(user.getCurrentLvl()-1), user.getCurrentLvl());
         gameController = new Game(user,warzone);
+        gameController.run();
+        deployArmy();
     }
     
     public void _init_(){
         view = new WarzoneWindow(warzone);
-        gameController.printWarzone();
         view.setVisible(true);
+    }
+    
+    public void deployArmy(){
+        boolean deploy = false;
+        Random rand = new Random();
+        for(Warrior warrior : user.getArmy()){
+            while(!deploy){
+                int i = rand.nextInt(15);
+                int j = rand.nextInt(15);
+                
+                if(warzone[i][j] == null){
+                    warrior.deploy(i, j, warzone);
+                    deploy = !deploy;
+                }
+            }
+            deploy = !deploy;
+        }
     }
 
     @Override

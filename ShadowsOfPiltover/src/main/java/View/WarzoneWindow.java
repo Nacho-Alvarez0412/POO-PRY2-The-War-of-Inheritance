@@ -5,8 +5,11 @@
  */
 package View;
 
+import Model.Deffense;
+import Model.Enums.DeffenseType;
 import Model.Enums.ElementType;
 import Model.Piece;
+import Model.Warrior;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
@@ -24,6 +27,9 @@ public class WarzoneWindow extends javax.swing.JFrame {
         this.warzone = warzone;
         this.setSize(437*4,249*4);
         
+        
+        
+        printWarriors();
         printWarBase();
         printBackground();
     }
@@ -48,19 +54,43 @@ public class WarzoneWindow extends javax.swing.JFrame {
         }
     }
     
+    public void printWarriors(){
+        int x = 0;
+        int y = 0;
+        for(int i = 0 ; i<15 ; i++){
+            for(int j = 0 ; j<15 ; j++){
+                if(warzone[i][j] != null && warzone[i][j].getElementType() == ElementType.warrior){
+                    Warrior edification = (Warrior) warzone[i][j];
+                    JLabel element =edification.getFrame();
+                    element.setSize(125,125);
+                    this.add(element).setLocation(x,y);
+                }
+                x+=116;
+            }
+            x=0;
+            y+=66;
+        }
+    }
+    
     public void printWarBase(){
-        int x = 25;
-        int y = 25;
+        int x = 0;
+        int y = 0;
         for(int i = 0 ; i<15 ; i++){
             for(int j = 0 ; j<15 ; j++){
                 if(warzone[i][j] != null && warzone[i][j].getElementType() == ElementType.deffense){
-                    JLabel element =warzone[i][j].getFrame();
-                    element.setSize(250,250);
-                    this.add(element).setLocation(j*70,i*40);
-                    x+=7;
+                    Deffense edification = (Deffense) warzone[i][j];
+                    JLabel element =edification.getFrame();
+                    element.setSize(125,125);
+                    if(edification.type != DeffenseType.TownHall){
+                        this.add(element).setLocation(x,y);
+                    }
+                    else
+                        this.add(element).setLocation(x,y);
                 }
-                y+=7;
+                x+=116;
             }
+            x=0;
+            y+=66;
         }
     }
 
@@ -73,7 +103,12 @@ public class WarzoneWindow extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jMenuItem1 = new javax.swing.JMenuItem();
+
+        jMenuItem1.setText("jMenuItem1");
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setSize(new java.awt.Dimension(1740, 990));
         getContentPane().setLayout(null);
 
         pack();
@@ -115,5 +150,6 @@ public class WarzoneWindow extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem jMenuItem1;
     // End of variables declaration//GEN-END:variables
 }

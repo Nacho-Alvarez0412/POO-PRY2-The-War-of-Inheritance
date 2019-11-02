@@ -83,7 +83,7 @@
     <Component class="javax.swing.JButton" name="Warrior4">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\nacho\Desktop\Proyectos\Java\The-War-of-Inheritance\ShadowsOfPiltover\src\main\java\View\DragonAssets\DragonAttacking.gif"/>
+          <Image iconType="2" name="C:\Users\nacho\Desktop\Proyectos\Java\The-War-of-Inheritance\ShadowsOfPiltover\src\main\java\View\DragonAssets\DragonAttackShow.gif"/>
         </Property>
       </Properties>
       <Events>
@@ -101,7 +101,7 @@
     <Component class="javax.swing.JButton" name="Warrior2">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\nacho\Desktop\Proyectos\Java\The-War-of-Inheritance\ShadowsOfPiltover\src\main\java\View\ArcherAssets\ArcherAttack.gif"/>
+          <Image iconType="2" name="C:\Users\nacho\Desktop\Proyectos\Java\The-War-of-Inheritance\ShadowsOfPiltover\src\main\java\View\ArcherAssets\ArcherAttackShow.gif"/>
         </Property>
         <Property name="toolTipText" type="java.lang.String" value="Isaaaaaa sea necio banano"/>
       </Properties>
@@ -117,7 +117,7 @@
     <Component class="javax.swing.JButton" name="Warrior3">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\nacho\Desktop\Proyectos\Java\The-War-of-Inheritance\ShadowsOfPiltover\src\main\java\View\BearAssets\BearAttack.gif"/>
+          <Image iconType="2" name="C:\Users\nacho\Desktop\Proyectos\Java\The-War-of-Inheritance\ShadowsOfPiltover\src\main\java\View\BearAssets\BearAttackShow.gif"/>
         </Property>
       </Properties>
       <Events>
@@ -160,7 +160,7 @@
     <Component class="javax.swing.JButton" name="Warrior1">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\nacho\Desktop\Proyectos\Java\The-War-of-Inheritance\ShadowsOfPiltover\src\main\java\View\KnightSkeletonAssets\KnightSAttack.gif"/>
+          <Image iconType="2" name="C:\Users\nacho\Desktop\Proyectos\Java\The-War-of-Inheritance\ShadowsOfPiltover\src\main\java\View\KnightSkeletonAssets\KnightSAttackShow.gif"/>
         </Property>
       </Properties>
       <AuxValues>

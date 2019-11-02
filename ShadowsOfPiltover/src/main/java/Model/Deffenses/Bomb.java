@@ -29,6 +29,7 @@ public class Bomb extends Deffense {
         
         ArrayList<ImageIcon> appereance = new ArrayList();
         appereance.add(new ImageIcon("C:\\Users\\nacho\\Desktop\\Proyectos\\Java\\The-War-of-Inheritance\\ShadowsOfPiltover\\src\\main\\java\\View\\DeffenseAssets\\Bomb.png"));
+        appereance.add(new ImageIcon("C:\\Users\\nacho\\Desktop\\Proyectos\\Java\\The-War-of-Inheritance\\ShadowsOfPiltover\\src\\main\\java\\View\\DeffenseAssets\\Debris.png"));
         setAppereance(appereance);
         this.setFrame(new JLabel()); 
         this.getFrame().setIcon(appereance.get(0));
@@ -51,8 +52,6 @@ public class Bomb extends Deffense {
             else{
                 setInRange(this.radarSwap(ElementType.warrior));
             }
-       
-            
             try {
                 sleep((long)getDamageXsecond() *1000);
             } catch (InterruptedException ex) {
@@ -76,6 +75,7 @@ public class Bomb extends Deffense {
 
     @Override
     public void die() {
+        this.getFrame().setIcon(appereance.get(1));
         System.out.println("Explote...");
     }
 
