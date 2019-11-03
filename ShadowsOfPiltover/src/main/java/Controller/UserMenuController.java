@@ -49,16 +49,25 @@ public class UserMenuController
         }
         else if (e.getSource().equals(vista.ContinueJourneyButton)){
             evento = true;
-            if(modelo.getCurrentLvl() != 1)
-                JOptionPane.showMessageDialog(vista, "Loading your epic adventures!");
+            if(modelo.getCurrentLvl() != 1){
+                evento = true;
+                SelectArmyController controller = new SelectArmyController(modelo,database);
+                controller._init_();
+                database.closeDataBase();
+                this.vista.dispose();
+            }
+                
             else
                 JOptionPane.showMessageDialog(vista, "There are no adventures available try beginning a new one!");
 
         }
         else if (e.getSource().equals(vista.NewJourneyButton)){
             evento = true;
+            if(modelo.getCurrentLvl()>1)
+                modelo.resetStats();
             SelectArmyController controller = new SelectArmyController(modelo,database);
             controller._init_();
+            database.closeDataBase();
             this.vista.dispose();
 
         }

@@ -5,17 +5,21 @@
  */
 package Model;
 
+import Controller.WarzoneController;
 import Model.Enums.DeffenseType;
 import Model.Enums.ElementType;
+import View.WarzoneWindow;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author nacho
  */
 public class Game extends Thread {
+    WarzoneController controller;
     User user;
     int lvl;
     Piece[][] warzone;
@@ -23,34 +27,75 @@ public class Game extends Thread {
     int gold;
     ArrayList<Deffense> deffenses;
     ArrayList<Warrior> army;
+    boolean victory;
+    WarzoneWindow view;
     
     
-    public Game(User user,Piece[][] warzone){
+    public Game(User user,Piece[][] warzone,WarzoneWindow view,WarzoneController controller){
         army = user.getArmy();
         this.user = user;
         this.warzone = warzone;
         lvl = user.getCurrentLvl();
-        gold = 250*(2*(lvl-1));
+        gold = 150*(2*(lvl-1));
         porcentage = 0;
+        victory = false;
+        deffenses = new ArrayList<>();
+        this.view = view;
+        this.controller = controller;
     }
+    
+    public void _init_(){
+        activateDeffenses();
+        setDeffenses();
+    }
+    
     
     public void setDeffenses(){
         Deffense deffense;
         for(Piece[] line : warzone) {
             for(Piece element : line){
-                if(element.getElementType()== ElementType.deffense){
-                    deffense = (Deffense) element;
+                if(element != null){
+                    if(element.getElementType()== ElementType.deffense){
+                        deffense = (Deffense) element;
 
-                    if(deffense.type != DeffenseType.Wall)
-                        deffenses.add(deffense);
+                        if(deffense.type != DeffenseType.Wall)
+                            deffenses.add(deffense);
+                    }
                 }
+            }
+        }
+    }
+    
+    public void getPorcentage(){
+        int defenseSize = deffenses.size();
+        for(Deffense defense : deffenses){
+            if(defense.getHealth()<=0){
+                porcentage +=  (1.0/defenseSize)*100;
             }
         }
     }
     
     @Override
     public void run(){
+        while(isFighting() && isDefending() &&!isTownHallDestroyed()){               
+            try {
+                sleep(1000);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(Game.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
         
+        getPorcentage();
+        System.out.println(porcentage);
+        
+        if(isDefending() && porcentage < 50){
+            JOptionPane.showMessageDialog(view, "Such a Dissapointment...");
+        }
+        else{
+            gold = (int)(gold*(porcentage/100));
+            user.levelUp(gold);
+            JOptionPane.showMessageDialog(view, "ARRRR Great job Captain!");
+        }
     }
     
     boolean isFighting(){
@@ -75,6 +120,28 @@ public class Game extends Thread {
                 }
             }
         }
+    }
+    
+    public void pause(){
+        for(Warrior warrior : army){
+            warrior.pause = !warrior.pause;
+        }
+        
+        for(Deffense defense : deffenses){
+            defense.pause = !defense.pause;
+        }
+    }
+    
+    public void stopGame(){
+        for(Warrior warrior : army){
+            warrior.setHealth(0);
+        }
+        
+        for(Deffense defense : deffenses){
+            defense.setHealth(0);
+        }
+        
+        
     }
         
    

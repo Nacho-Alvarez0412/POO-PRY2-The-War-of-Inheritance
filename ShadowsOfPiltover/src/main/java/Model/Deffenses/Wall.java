@@ -41,6 +41,9 @@ public class Wall extends Deffense {
         while(getHealth()>0){
             try {
                 sleep(1000);
+                while(pause){
+                    sleep(1);
+                }
             } catch (InterruptedException ex) {
                 Logger.getLogger(Wall.class.getName()).log(Level.SEVERE, null, ex);
             }

@@ -18,12 +18,12 @@ import javax.swing.JLabel;
  * @author nacho
  */
 public abstract class Piece extends Thread implements IComportamiento {
-    private String name;
-    private double health;
-    private double damage;
-    private double damageXsecond;
+    public String name;
+    public double health;
+    public double damage;
+    public double damageXsecond;
     private int range;
-    private int lvl;
+    public int lvl;
     private int unlockLvl;
     
     private int x;
@@ -31,9 +31,10 @@ public abstract class Piece extends Thread implements IComportamiento {
     public ArrayList<ImageIcon> appereance;
     private ArrayList<File> sounds;
     private JLabel frame;
-    private Piece[][] warzone;
+    Piece[][] warzone;
     private ElementType elementType;
     private ArrayList<Piece> inRange;
+    public boolean pause;
 
     public Piece(ElementType elementType,String name, int health, int damage, int damageXsecond, int range, int lvl, int unlockLvl, int x, int y, ArrayList<ImageIcon> appereance, ArrayList<File> sounds, JLabel frame,Piece[][] warzone) {
         this.name = name;
@@ -51,6 +52,7 @@ public abstract class Piece extends Thread implements IComportamiento {
         this.warzone = warzone;
         this.elementType = elementType;
         this.inRange = null;
+        pause = false;
     }
 
     public ArrayList<Piece> getInRange() {

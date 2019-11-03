@@ -43,6 +43,9 @@ public class TownHall extends Deffense {
         while(getHealth()>0){
             try {
                 sleep(1000);
+                while(pause){
+                    sleep(1);
+                }
             } catch (InterruptedException ex) {
                 Logger.getLogger(TownHall.class.getName()).log(Level.SEVERE, null, ex);
             }

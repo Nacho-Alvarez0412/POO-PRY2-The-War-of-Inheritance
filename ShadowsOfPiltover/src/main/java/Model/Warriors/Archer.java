@@ -26,6 +26,7 @@ public class Archer extends Warrior {
         this.setHealth(80+(lvl*0.5));
         this.setDamage(10+(lvl*4));
         this.setDamageXsecond(3);
+        this.setRange(2+lvl);
         loadImages();
  
     }

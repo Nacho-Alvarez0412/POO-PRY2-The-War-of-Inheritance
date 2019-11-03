@@ -125,6 +125,12 @@ public class ArmySelectionWindow extends javax.swing.JFrame {
         });
         getContentPane().add(Warrior3);
         Warrior3.setBounds(620, 210, 170, 120);
+
+        Warrior6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Warrior6ActionPerformed(evt);
+            }
+        });
         getContentPane().add(Warrior6);
         Warrior6.setBounds(370, 420, 170, 130);
 
@@ -204,6 +210,10 @@ public class ArmySelectionWindow extends javax.swing.JFrame {
     private void FightButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FightButtonMouseExited
         this.FightHoverLabel.setVisible(false);
     }//GEN-LAST:event_FightButtonMouseExited
+
+    private void Warrior6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Warrior6ActionPerformed
+        
+    }//GEN-LAST:event_Warrior6ActionPerformed
 
     /**
      * @param args the command line arguments

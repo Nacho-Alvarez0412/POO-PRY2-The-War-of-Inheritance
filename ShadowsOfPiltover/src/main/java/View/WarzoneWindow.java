@@ -24,11 +24,19 @@ public class WarzoneWindow extends javax.swing.JFrame {
     
     public WarzoneWindow(Piece[][] warzone) {
         initComponents();
+        this.jLabel1.setVisible(false);
+        this.jButton1.setOpaque(false);
+        this.jButton1.setContentAreaFilled(false);
+        this.jButton1.setBorderPainted(false);
+        
+        this.jLabel2.setVisible(false);
+        this.jButton2.setOpaque(false);
+        this.jButton2.setContentAreaFilled(false);
+        this.jButton2.setBorderPainted(false);
+        
         this.warzone = warzone;
         this.setSize(437*4,249*4);
-        
-        
-        
+     
         printWarriors();
         printWarBase();
         printBackground();
@@ -55,42 +63,34 @@ public class WarzoneWindow extends javax.swing.JFrame {
     }
     
     public void printWarriors(){
-        int x = 0;
-        int y = 0;
         for(int i = 0 ; i<15 ; i++){
             for(int j = 0 ; j<15 ; j++){
                 if(warzone[i][j] != null && warzone[i][j].getElementType() == ElementType.warrior){
                     Warrior edification = (Warrior) warzone[i][j];
                     JLabel element =edification.getFrame();
-                    element.setSize(125,125);
-                    this.add(element).setLocation(x,y);
+                    element.setSize(116,66);
+                    this.add(element).setLocation(116*j,66*i);
                 }
-                x+=116;
             }
-            x=0;
-            y+=66;
+           
         }
     }
     
     public void printWarBase(){
-        int x = 0;
-        int y = 0;
         for(int i = 0 ; i<15 ; i++){
             for(int j = 0 ; j<15 ; j++){
                 if(warzone[i][j] != null && warzone[i][j].getElementType() == ElementType.deffense){
                     Deffense edification = (Deffense) warzone[i][j];
                     JLabel element =edification.getFrame();
-                    element.setSize(125,125);
+                    element.setSize(116,66);
                     if(edification.type != DeffenseType.TownHall){
-                        this.add(element).setLocation(x,y);
+                        this.add(element).setLocation(116*j,66*i);
                     }
                     else
-                        this.add(element).setLocation(x,y);
+                        this.add(element).setLocation(116*j,66*i);
                 }
-                x+=116;
             }
-            x=0;
-            y+=66;
+
         }
     }
 
@@ -104,6 +104,10 @@ public class WarzoneWindow extends javax.swing.JFrame {
     private void initComponents() {
 
         jMenuItem1 = new javax.swing.JMenuItem();
+        jLabel1 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
 
         jMenuItem1.setText("jMenuItem1");
 
@@ -111,8 +115,73 @@ public class WarzoneWindow extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(1740, 990));
         getContentPane().setLayout(null);
 
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\nacho\\Desktop\\Proyectos\\Java\\The-War-of-Inheritance\\ShadowsOfPiltover\\src\\main\\java\\View\\Images\\PauseHover.png")); // NOI18N
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(30, 20, 150, 73);
+
+        jButton1.setIcon(new javax.swing.ImageIcon("C:\\Users\\nacho\\Desktop\\Proyectos\\Java\\The-War-of-Inheritance\\ShadowsOfPiltover\\src\\main\\java\\View\\Images\\Pause.png")); // NOI18N
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jButton1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jButton1MouseExited(evt);
+            }
+        });
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1);
+        jButton1.setBounds(20, 20, 170, 80);
+
+        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\nacho\\Desktop\\Proyectos\\Java\\The-War-of-Inheritance\\ShadowsOfPiltover\\src\\main\\java\\View\\Images\\ExitHover.png")); // NOI18N
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(50, 130, 150, 73);
+
+        jButton2.setIcon(new javax.swing.ImageIcon("C:\\Users\\nacho\\Desktop\\Proyectos\\Java\\The-War-of-Inheritance\\ShadowsOfPiltover\\src\\main\\java\\View\\Images\\Exit.png")); // NOI18N
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jButton2MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jButton2MouseExited(evt);
+            }
+        });
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton2);
+        jButton2.setBounds(20, 130, 170, 80);
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseEntered
+       this.jLabel1.setVisible(true);
+    }//GEN-LAST:event_jButton1MouseEntered
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseExited
+        this.jLabel1.setVisible(false);    }//GEN-LAST:event_jButton1MouseExited
+
+    private void jButton2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseEntered
+        this.jLabel2.setVisible(true);
+    }//GEN-LAST:event_jButton2MouseEntered
+
+    private void jButton2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseExited
+        this.jLabel2.setVisible(false);
+    }//GEN-LAST:event_jButton2MouseExited
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -150,6 +219,10 @@ public class WarzoneWindow extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton jButton1;
+    public javax.swing.JButton jButton2;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JMenuItem jMenuItem1;
     // End of variables declaration//GEN-END:variables
 }

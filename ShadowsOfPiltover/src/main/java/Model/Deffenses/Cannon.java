@@ -82,7 +82,7 @@ public class Cannon extends Deffense{
 
     @Override
     public void die() {
-        System.out.println("entre");
+        getWarzone()[getX()][getY()] = null;
         this.getFrame().setIcon(appereance.get(1));
         System.out.println(getPieceName()+",Fui Destruido...");
     }

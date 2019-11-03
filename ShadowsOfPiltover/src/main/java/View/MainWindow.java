@@ -5,7 +5,6 @@
  */
 package View;
 
-
 import javax.swing.JFrame;
 
 
@@ -14,11 +13,9 @@ import javax.swing.JFrame;
  * @author nacho
  */
 public class MainWindow extends javax.swing.JFrame {
-
     /**
      * Creates new form MainWindow
      */
-    
     
     public MainWindow() {
         initComponents();
@@ -30,6 +27,12 @@ public class MainWindow extends javax.swing.JFrame {
         this.NewUserButton.setOpaque(false);
         this.NewUserButton.setContentAreaFilled(false);
         this.NewUserButton.setBorderPainted(false);
+        this.Administrate.setOpaque(false);
+        this.Administrate.setContentAreaFilled(false);
+        this.Administrate.setBorderPainted(false);
+        this.AdministrateLabel.setVisible(false);
+
+        
         
     }
 
@@ -51,6 +54,8 @@ public class MainWindow extends javax.swing.JFrame {
         UsernameTextField = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         NewUserButton = new javax.swing.JButton();
+        AdministrateLabel = new javax.swing.JLabel();
+        Administrate = new javax.swing.JButton();
         Background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -133,6 +138,22 @@ public class MainWindow extends javax.swing.JFrame {
         getContentPane().add(NewUserButton);
         NewUserButton.setBounds(380, 620, 230, 50);
 
+        AdministrateLabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\nacho\\Desktop\\Proyectos\\Java\\The-War-of-Inheritance\\ShadowsOfPiltover\\src\\main\\java\\View\\Images\\AdministrateHover.png")); // NOI18N
+        getContentPane().add(AdministrateLabel);
+        AdministrateLabel.setBounds(813, 30, 270, 60);
+
+        Administrate.setIcon(new javax.swing.ImageIcon("C:\\Users\\nacho\\Desktop\\Proyectos\\Java\\The-War-of-Inheritance\\ShadowsOfPiltover\\src\\main\\java\\View\\Images\\Administrate.png")); // NOI18N
+        Administrate.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                AdministrateMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                AdministrateMouseExited(evt);
+            }
+        });
+        getContentPane().add(Administrate);
+        Administrate.setBounds(810, 20, 280, 85);
+
         Background.setIcon(new javax.swing.ImageIcon("C:\\Users\\nacho\\Desktop\\Proyectos\\Java\\The-War-of-Inheritance\\ShadowsOfPiltover\\src\\main\\java\\View\\Images\\MainWindowBackground.jpg")); // NOI18N
         Background.setText("jLabel1");
         Background.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -191,6 +212,14 @@ public class MainWindow extends javax.swing.JFrame {
         this.jLabel1.setVisible(false);
     }//GEN-LAST:event_NewUserButtonMouseExited
 
+    private void AdministrateMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AdministrateMouseEntered
+        this.AdministrateLabel.setVisible(true);
+    }//GEN-LAST:event_AdministrateMouseEntered
+
+    private void AdministrateMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AdministrateMouseExited
+        this.AdministrateLabel.setVisible(false);
+    }//GEN-LAST:event_AdministrateMouseExited
+
     /**
      * @param args the command line arguments
      */
@@ -231,6 +260,8 @@ public class MainWindow extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton Administrate;
+    private javax.swing.JLabel AdministrateLabel;
     private javax.swing.JLabel Background;
     private javax.swing.JLabel EnterTheSeaLabel;
     public javax.swing.JButton NewUserButton;

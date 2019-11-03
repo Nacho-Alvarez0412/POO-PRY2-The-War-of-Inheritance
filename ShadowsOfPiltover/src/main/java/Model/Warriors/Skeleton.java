@@ -41,6 +41,8 @@ public class Skeleton extends Warrior {
    
     @Override
     public void sound() {
+        PlayMusic player = new PlayMusic();
+        player.playMainMusic("C:\\Users\\nacho\\Desktop\\Proyectos\\Java\\The-War-of-Inheritance\\ShadowsOfPiltover\\src\\main\\java\\View\\Sword Fight Sounds.wav");
     }
     
 }

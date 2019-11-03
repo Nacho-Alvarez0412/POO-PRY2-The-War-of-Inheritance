@@ -53,7 +53,11 @@ public class Firecracker extends Deffense{
        
             
             try {
+                
                 sleep((long)getDamageXsecond() *1000);
+                while(pause){
+                    sleep(1);
+                }
             } catch (InterruptedException ex) {
                 Logger.getLogger(Firecracker.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -79,6 +83,7 @@ public class Firecracker extends Deffense{
 
     @Override
     public void die() {
+        getWarzone()[getX()][getY()] = null;
         this.getFrame().setIcon(appereance.get(1));
         System.out.println(getPieceName()+",Fui Destruido...");
     }

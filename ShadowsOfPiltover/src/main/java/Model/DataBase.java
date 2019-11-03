@@ -16,17 +16,20 @@ public class DataBase implements Serializable {
     //Atributos
     public ArrayList<User> users;
     public ArrayList<int[][]> templates;
+    public DummyWarriorTemplate warriorTemplate;
     
     public DataBase(){
         DataBase dataBase = (DataBase) FileManager.readObject("DataBase.txt");
         if (dataBase != null){
             this.users = dataBase.users;
             this.templates = dataBase.templates;
+            this.warriorTemplate = dataBase.warriorTemplate;
         }
         
         else{
             this.users = new ArrayList<>();
             this.templates = new ArrayList<>();
+            this.warriorTemplate = new DummyWarriorTemplate();
             loadLvls();
         }
         

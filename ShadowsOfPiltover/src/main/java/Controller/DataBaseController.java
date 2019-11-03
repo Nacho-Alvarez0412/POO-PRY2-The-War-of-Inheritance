@@ -10,6 +10,8 @@ import View.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
+import javax.sound.sampled.Clip;
+
 
 /**
  *
@@ -19,6 +21,8 @@ public class DataBaseController implements ActionListener{
     private MainWindow view;
     private DataBase model;
     private boolean evento;
+    
+    
 
     public DataBaseController(MainWindow vista, DataBase model) {
         this.view = vista;
@@ -30,6 +34,7 @@ public class DataBaseController implements ActionListener{
     public void _init_(){
         view.NewUserButton.addActionListener(this);
         view.jButton1.addActionListener(this);
+        view.Administrate.addActionListener(this);
         view.setTitle("Dead Tides");
         view.setSize(1100, 800);
         view.setVisible(true);
@@ -49,6 +54,7 @@ public class DataBaseController implements ActionListener{
             boolean created = model.createUser(view.UsernameTextField.getText(), view.PasswordTextField.getText());
             if(created){
                 JOptionPane.showMessageDialog(view, "User created Succesfully");
+                model.closeDataBase();
             }
             
             else{
@@ -70,6 +76,15 @@ public class DataBaseController implements ActionListener{
             else{
                 JOptionPane.showMessageDialog(view, "Invalid username or password");
             }
+        }
+        
+        else if (e.getSource().equals(view.Administrate)){
+            evento = true;
+            AdministrateWindow window = new AdministrateWindow(model.warriorTemplate);
+            window.setVisible(true);
+            model.closeDataBase();
+            
+            
         }
       
     }

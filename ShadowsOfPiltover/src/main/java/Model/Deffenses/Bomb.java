@@ -54,6 +54,9 @@ public class Bomb extends Deffense {
             }
             try {
                 sleep((long)getDamageXsecond() *1000);
+                while(pause){
+                    sleep(1);
+                }
             } catch (InterruptedException ex) {
                 Logger.getLogger(Bomb.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -70,11 +73,13 @@ public class Bomb extends Deffense {
         for(Piece warrior : getInRange()){
             warrior.setHealth(warrior.getHealth()-getDamage());
         }
+        setHealth(0);
     }
     
 
     @Override
     public void die() {
+        getWarzone()[getX()][getY()] = null;
         this.getFrame().setIcon(appereance.get(1));
         System.out.println("Explote...");
     }

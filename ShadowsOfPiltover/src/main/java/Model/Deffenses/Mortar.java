@@ -24,7 +24,7 @@ public class Mortar extends Deffense {
     
     public Mortar(int lvl,Piece[][] warzone) {
         super("Mortar", 1, 1, 1, 8, lvl, 1, 0, 0, new ArrayList<>(), new ArrayList<>(), null, warzone, new ArrayList<>(), DeffenseType.Mortar);
-        this.setDamage(40+(lvl*2));
+        this.setDamage(100+(lvl*2));
         this.setHealth(80+(lvl*2.5));
         this.setDamageXsecond(4);
         
@@ -56,6 +56,9 @@ public class Mortar extends Deffense {
        
             try {
                 sleep((long)getDamageXsecond() *1000);
+                while(pause){
+                    sleep(1);
+                }
             } catch (InterruptedException ex) {
                 Logger.getLogger(Mortar.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -80,6 +83,7 @@ public class Mortar extends Deffense {
 
     @Override
     public void die() {
+        getWarzone()[getX()][getY()] = null;
         this.getFrame().setIcon(appereance.get(1));
         System.out.println(getPieceName()+",Fui Destruido...");
     }

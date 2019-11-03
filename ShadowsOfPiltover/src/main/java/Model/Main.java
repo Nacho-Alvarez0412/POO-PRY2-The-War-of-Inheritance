@@ -44,10 +44,11 @@ public class Main {
         
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-               MainWindow main = new MainWindow();
+                
+                MainWindow main = new MainWindow();
                 DataBase dataBase = new DataBase();
                 User user = new User("Nacho","1234");
-                user.currentLvl = 10;
+                user.currentLvl = 5;
                 dataBase.users.add(user);
 //                Piece[][] warzone = BoardGenerator.generateBoard(dataBase.templates.get(4), 4);
 //                Game game = new Game(user,warzone);

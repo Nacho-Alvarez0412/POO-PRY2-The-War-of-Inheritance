@@ -21,9 +21,9 @@ import javax.swing.JLabel;
 public class Bear extends Warrior{
 
     public Bear(int lvl){
-        super(400,"Bear",1,1,1, 1, lvl, 1, 0, 0, new ArrayList<>(), new ArrayList<>(), null, null,WarriorType.Meele,3);
-        this.setHealth(100+(lvl*0.5));
-        this.setDamage(35+(lvl*4));
+        super(400,"Bear",1,1,1, 1, lvl, 1, 0, 0, new ArrayList<>(), new ArrayList<>(), null, null,WarriorType.Beast,3);
+        this.setHealth(500);
+        this.setDamage(35);
         this.setUnlockLvl(5);
         this.setRange(1);
         this.setDamageXsecond(2);
@@ -33,7 +33,7 @@ public class Bear extends Warrior{
     private void loadImages(){
         ArrayList<ImageIcon> appereance = new ArrayList();
         appereance.add(new ImageIcon("C:\\Users\\nacho\\Desktop\\Proyectos\\Java\\The-War-of-Inheritance\\ShadowsOfPiltover\\src\\main\\java\\View\\BearAssets\\BearMove.gif"));
-        appereance.add(new ImageIcon("C:\\Users\\nacho\\Desktop\\Proyectos\\Java\\The-War-of-Inheritance\\ShadowsOfPiltover\\src\\main\\java\\View\\BearAssets\\BearAttack.gif"));
+        appereance.add(new ImageIcon("C:\\Users\\nacho\\Desktop\\Proyectos\\Java\\The-War-of-Inheritance\\ShadowsOfPiltover\\src\\main\\java\\View\\BearAssets\\BearAttackShow.gif"));
         appereance.add(new ImageIcon("C:\\Users\\nacho\\Desktop\\Proyectos\\Java\\The-War-of-Inheritance\\ShadowsOfPiltover\\src\\main\\java\\View\\BearAssets\\BearDie.gif"));
         appereance.add(new ImageIcon("C:\\Users\\nacho\\Desktop\\Proyectos\\Java\\The-War-of-Inheritance\\ShadowsOfPiltover\\src\\main\\java\\View\\Images\\Grave.png"));
         setAppereance(appereance);

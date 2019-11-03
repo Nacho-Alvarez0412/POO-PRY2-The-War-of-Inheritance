@@ -55,6 +55,9 @@ public class Tower extends Deffense {
        
             try {
                 sleep((long)getDamageXsecond() *1000);
+                while(pause){
+                    sleep(1);
+                }
             } catch (InterruptedException ex) {
                 Logger.getLogger(Tower.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -82,6 +85,7 @@ public class Tower extends Deffense {
 
     @Override
     public void die() {
+        getWarzone()[getX()][getY()] = null;
         this.getFrame().setIcon(appereance.get(1));
         System.out.println(getPieceName()+",Fui Destruido...");
     }

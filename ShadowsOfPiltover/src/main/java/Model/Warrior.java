@@ -85,6 +85,7 @@ public abstract class Warrior extends Piece {
         info += "Damage: "+warrior.getDamage()+" \n";
         info += "Health: "+warrior.getHealth()+" \n";
         info += "Cost: "+warrior.getCost()+" \n";
+        info += "Slots: "+warrior.armySlots+" \n";
         info += "Range: "+warrior.getRange()+" \n";
         info += "Damage per Second: "+warrior.getDamageXsecond();
         
@@ -95,6 +96,7 @@ public abstract class Warrior extends Piece {
     public void run(){
         while (getHealth()>0){
             if(deffender != null){
+                sound();
                 System.out.println(getPieceName()+",Target: "+deffender.getPieceName());
                 attack();
             }
@@ -110,6 +112,9 @@ public abstract class Warrior extends Piece {
        
             try {
                 sleep((long)getDamageXsecond() *1000);
+                while(pause){
+                    sleep(1);
+                }
             } catch (InterruptedException ex) {
                 Logger.getLogger(Dragon.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -122,6 +127,8 @@ public abstract class Warrior extends Piece {
         this.getFrame().setIcon(appereance.get(0));
         int x = getX();
         int y = getY();
+        
+        System.out.println(x+","+y);
         
         if(x<getTownHallX())
             x++;
@@ -138,7 +145,8 @@ public abstract class Warrior extends Piece {
             getWarzone()[getX()][getY()] = null;
             setX(x);
             setY(y);
-            this.getFrame().setLocation(x*116, y*66);
+            this.getFrame().setLocation(y*116, x*66);
+            System.out.println(x+","+y);
         }
     }
 
@@ -161,9 +169,10 @@ public abstract class Warrior extends Piece {
     @Override
     public void die() {
         this.getFrame().setIcon(appereance.get(2));
+        this.warzone[getX()][getY()] = null;
         
         try {
-            sleep(2000);
+            sleep(1000);
         } catch (InterruptedException ex) {
             Logger.getLogger(Warrior.class.getName()).log(Level.SEVERE, null, ex);
         }
