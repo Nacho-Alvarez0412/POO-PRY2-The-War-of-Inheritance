@@ -21,9 +21,12 @@ import javax.swing.JLabel;
 public class Skeleton extends Warrior {
 
     public Skeleton(int lvl){
-        super(100,"Skeleon",1,1,1, 1, lvl, 1, 0, 0, new ArrayList<>(), new ArrayList<>(), null, null,WarriorType.Meele,1);
-        this.setHealth(60+(lvl*0.5));
-        this.setDamage(10+(lvl*4));
+        super(100,"Bryan",1,1,1, 1, lvl, 1, 0, 0, new ArrayList<>(), new ArrayList<>(), null, null,WarriorType.Meele,1);
+        this.setHealth(80+(lvl*0.5));
+        this.setDamage(90+(lvl*4));
+        this.setDamageXsecond(1);
+        this.setRange(1);
+        this.setUnlockLvl(1);
         loadImages();
     }
     

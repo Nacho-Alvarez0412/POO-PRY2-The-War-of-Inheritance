@@ -17,6 +17,8 @@ public class DataBase implements Serializable {
     public ArrayList<User> users;
     public ArrayList<int[][]> templates;
     public DummyWarriorTemplate warriorTemplate;
+    public DummyWarriorTemplate warriorTemplate2;
+    public DummyWarriorTemplate warriorTemplate3;
     
     public DataBase(){
         DataBase dataBase = (DataBase) FileManager.readObject("DataBase.txt");

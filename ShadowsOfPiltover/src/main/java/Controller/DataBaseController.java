@@ -80,8 +80,20 @@ public class DataBaseController implements ActionListener{
         
         else if (e.getSource().equals(view.Administrate)){
             evento = true;
-            AdministrateWindow window = new AdministrateWindow(model.warriorTemplate);
-            window.setVisible(true);
+            if(model.warriorTemplate != null){
+                AdministrateWindow window = new AdministrateWindow(model.warriorTemplate);
+                window.setVisible(true);
+            }
+            
+            else if(model.warriorTemplate2 != null){
+                AdministrateWindow window = new AdministrateWindow(model.warriorTemplate2);
+                window.setVisible(true);
+            }
+            
+            else{
+                AdministrateWindow window = new AdministrateWindow(model.warriorTemplate3);
+                window.setVisible(true);
+            }
             model.closeDataBase();
             
             

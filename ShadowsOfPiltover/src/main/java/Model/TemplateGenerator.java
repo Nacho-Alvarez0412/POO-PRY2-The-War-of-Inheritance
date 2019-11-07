@@ -25,12 +25,12 @@ public class TemplateGenerator {
         templates.add(lvl7());
         templates.add(lvl8());
         templates.add(lvl9());
+        templates.add(lvl7());
+        templates.add(lvl8());
         templates.add(lvl10());
-        //templates.add(lvl11());
-        //templates.add(lvl12());
-        //templates.add(lvl13());
-        //templates.add(lvl14());
-        //templates.add(lvl15());
+        templates.add(lvl9());
+        templates.add(lvl9());
+        templates.add(lvl8());
     }
 
     public ArrayList<int[][]> getTemplates() {
@@ -365,27 +365,5 @@ public class TemplateGenerator {
         template[12][10] = 4;
          
         return template;
-    }
-
-    private int[][] lvl11() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    private int[][] lvl12() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    private int[][] lvl13() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    private int[][] lvl14() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    private int[][] lvl15() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
-    
+    }    
 }

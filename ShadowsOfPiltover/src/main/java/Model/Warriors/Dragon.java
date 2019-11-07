@@ -22,11 +22,12 @@ import javax.swing.JLabel;
  */
 public class Dragon extends Warrior {
     public Dragon(int lvl){
-        super(700,"Dragon",1,1,1, 7, lvl, 1, 0, 0, new ArrayList<>(), new ArrayList<>(), null, null,WarriorType.Airborne,5);
-        this.setHealth(60+(lvl*0.5));
-        this.setDamage(10+(lvl*4));
-        this.setRange(7+lvl);
-        this.setUnlockLvl(7);
+        super(200,"Drogo",1,1,1, 7, lvl, 1, 0, 0, new ArrayList<>(), new ArrayList<>(), null, null,WarriorType.Airborne,2);
+        this.setHealth(250);
+        this.setDamage(200);
+        this.setRange(5);
+        this.setUnlockLvl(2);
+        this.setDamageXsecond(3);
         loadImages();
     }
     
@@ -40,31 +41,6 @@ public class Dragon extends Warrior {
         this.setFrame(new JLabel()); 
         this.getFrame().setIcon(appereance.get(0));
     }
-    
-    @Override
-    public void run(){
-        while (getHealth()>0){
-            if(deffender != null){
-                System.out.println(getPieceName()+",Target: "+deffender.getPieceName());
-                attack();
-            }
-            else{
-                setInRange(radarSwap(ElementType.deffense));
-                sound();
-            }
-       
-            try {
-                sleep((long)getDamageXsecond() *1000);
-                while(pause){
-                    sleep(1);
-                }
-            } catch (InterruptedException ex) {
-                Logger.getLogger(Dragon.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
-        die();
-    }
-
     
 
 

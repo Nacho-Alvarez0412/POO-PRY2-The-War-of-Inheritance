@@ -21,12 +21,12 @@ import javax.swing.JLabel;
 public class StoneGolem extends Warrior {
 
    public StoneGolem(int lvl){
-        super(1000,"Stone Golem",1,1,1, 1, lvl, 1, 0, 0, new ArrayList<>(), new ArrayList<>(), null, null,WarriorType.Meele,7);
-        this.setHealth(700+(lvl*3.5));
-        this.setDamage(15+(lvl*4));
-        this.setUnlockLvl(7);
+        super(300,"Super Mom",1,1,1, 1, lvl, 1, 0, 0, new ArrayList<>(), new ArrayList<>(), null, null,WarriorType.Hero,2);
+        this.setHealth(500);
+        this.setDamage(300);
+        this.setUnlockLvl(3);
         this.setRange(1);
-        this.setDamageXsecond(3);
+        this.setDamageXsecond(5);
         loadImages();
     }
    

@@ -21,12 +21,12 @@ import javax.swing.JLabel;
 public class Bear extends Warrior{
 
     public Bear(int lvl){
-        super(400,"Bear",1,1,1, 1, lvl, 1, 0, 0, new ArrayList<>(), new ArrayList<>(), null, null,WarriorType.Beast,3);
+        super(400,"Beasty",1,1,1, 1, lvl, 1, 0, 0, new ArrayList<>(), new ArrayList<>(), null, null,WarriorType.Beast,2);
         this.setHealth(500);
-        this.setDamage(35);
-        this.setUnlockLvl(5);
-        this.setRange(1);
-        this.setDamageXsecond(2);
+        this.setDamage(400);
+        this.setUnlockLvl(4);
+        this.setRange(5);
+        this.setDamageXsecond(7);
         loadImages();
     }
     

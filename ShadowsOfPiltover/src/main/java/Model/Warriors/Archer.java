@@ -22,11 +22,12 @@ import javax.swing.JLabel;
  */
 public class Archer extends Warrior {
     public Archer(int lvl){
-        super(200,"Archer",1,1,1, 2, lvl, 1, 0, 0, new ArrayList<>(), new ArrayList<>(), null, null,WarriorType.Ranged,2);
-        this.setHealth(80+(lvl*0.5));
-        this.setDamage(10+(lvl*4));
-        this.setDamageXsecond(3);
-        this.setRange(2+lvl);
+        super(25,"Robin Hood",1,1,1, 2, lvl, 1, 0, 0, new ArrayList<>(), new ArrayList<>(), null, null,WarriorType.Ranged,1);
+        this.setHealth(120+(lvl*0.5));
+        this.setDamage(150+(lvl*4));
+        this.setDamageXsecond(1);
+        this.setRange(3+lvl);
+        this.setUnlockLvl(1);
         loadImages();
  
     }

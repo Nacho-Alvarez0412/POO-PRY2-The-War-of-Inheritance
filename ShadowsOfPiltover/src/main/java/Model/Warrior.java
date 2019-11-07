@@ -95,6 +95,9 @@ public abstract class Warrior extends Piece {
     @Override
     public void run(){
         while (getHealth()>0){
+            System.out.println("-------------------------------------------------");
+            System.out.println(getWarrior(this));
+            System.out.println("-------------------------------------------------");
             if(deffender != null){
                 sound();
                 System.out.println(getPieceName()+",Target: "+deffender.getPieceName());
